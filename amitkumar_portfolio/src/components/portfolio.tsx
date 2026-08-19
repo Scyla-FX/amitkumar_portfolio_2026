@@ -596,13 +596,7 @@ export function Hero() {
                 </h2>
               </div>
 
-              {/* Right: Socials */}
-              <div className="flex flex-row gap-3 md:flex-col">
-                <SocialButton icon="ig" />
-                <SocialButton icon="in" />
-                <SocialButton icon="fb" />
-                <SocialButton icon="x" />
-              </div>
+
             </div>
 
 
