@@ -260,7 +260,7 @@ function CrmErpPage() {
             Complex systems don't have to feel complicated. If you're building a CRM or ERP product and want it to feel this clear, let's talk.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="mailto:hello@example.com" className="px-8 py-4 rounded-full bg-ink text-background font-medium hover:bg-accent transition-colors">
+            <a href="mailto:amittadvi1412@gmail.com" className="px-8 py-4 rounded-full bg-ink text-background font-medium hover:bg-accent transition-colors">
               Get in touch
             </a>
             <Link to="/" className="px-8 py-4 rounded-full bg-surface border border-line text-ink hover:bg-surface/80 transition-colors">

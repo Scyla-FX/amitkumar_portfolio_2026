@@ -80,7 +80,7 @@ function VitaMindCaseStudy() {
               <div className="flex gap-4 items-start bg-teal-50/50 dark:bg-teal-900/10 border border-teal-100 dark:border-teal-900/30 rounded-[14px] p-5 mb-10 text-sm text-ink-soft">
                 <ShieldCheck className="w-5 h-5 text-teal-600 dark:text-teal-400 shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-ink font-medium">A note on confidentiality.</strong> This project was built under NDA for a healthcare technology company. No proprietary screens, data, or client identity are shown here — every interface in this case study has been independently re-created from scratch to demonstrate the UX thinking, information architecture, and design system decisions I authored on the real product, without exposing anything confidential.
+                  <strong className="text-ink font-medium">A note on confidentiality.</strong> This project was built under NDA for a healthcare technology company. No proprietary screens, data, or client identity are shown here. The interfaces have been independently reconstructed to demonstrate the UX thinking, information architecture, and design-system decisions I contributed to the real product.
                 </div>
               </div>
             </motion.div>
