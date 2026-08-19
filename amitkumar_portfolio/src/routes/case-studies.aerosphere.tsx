@@ -437,15 +437,15 @@ function CaseStudyDetail() {
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="rounded-2xl overflow-hidden shadow-sm group relative aspect-[4/3]">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200" alt="Marketplace Mockup" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src="/aero_design_system.png" alt="AeroSphere Design System" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                <div className="px-3 py-1 bg-white/20 backdrop-blur-md border border-white/30 rounded-lg inline-block font-mono text-[10px] text-white uppercase tracking-wider mb-2">Marketplace Comparison</div>
+                <div className="px-3 py-1 bg-white/20 backdrop-blur-md border border-white/30 rounded-lg inline-block font-mono text-[10px] text-white uppercase tracking-wider mb-2">AeroSphere Design System</div>
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-sm group relative aspect-[4/3]">
-              <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=1200" alt="Maintenance Mockup" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src="/aero_typography.png" alt="AeroSphere Typography" className="w-full h-full object-cover object-left transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                <div className="px-3 py-1 bg-white/20 backdrop-blur-md border border-white/30 rounded-lg inline-block font-mono text-[10px] text-white uppercase tracking-wider mb-2">Maintenance Scheduler</div>
+                <div className="px-3 py-1 bg-white/20 backdrop-blur-md border border-white/30 rounded-lg inline-block font-mono text-[10px] text-white uppercase tracking-wider mb-2">Typography</div>
               </div>
             </div>
           </div>

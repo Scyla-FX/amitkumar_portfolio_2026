@@ -1,5 +1,5 @@
 import architectureImg from "../assets/architecture.png";
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import {
   motion,
   useScroll,
@@ -350,6 +350,8 @@ export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() || 0;
@@ -379,27 +381,31 @@ export function Nav() {
               <img src="/profile_v01.png" alt="Profile" className="h-full w-full object-cover text-transparent" />
             </div>
           </Link>
-          <nav className="hidden items-center gap-1 rounded-full border border-line/70 bg-background/60 backdrop-blur md:flex px-2 py-1.5">
-            {NAV_LINKS.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="rounded-full px-3.5 py-1.5 text-sm text-ink-soft transition-colors hover:bg-surface hover:text-ink"
-              >
-                {l.label}
-              </a>
-            ))}
-          </nav>
+          {isHome && (
+            <nav className="hidden items-center gap-1 rounded-full border border-line/70 bg-background/60 backdrop-blur md:flex px-2 py-1.5">
+              {NAV_LINKS.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className="rounded-full px-3.5 py-1.5 text-sm text-ink-soft transition-colors hover:bg-surface hover:text-ink"
+                >
+                  {l.label}
+                </a>
+              ))}
+            </nav>
+          )}
           <div className="hidden md:block">
             <MagneticButton href="#contact">Get in touch</MagneticButton>
           </div>
-          <button
-            aria-label="Open menu"
-            className="grid h-10 w-10 place-items-center rounded-full border border-line md:hidden"
-            onClick={() => setOpen(true)}
-          >
-            <Menu className="h-5 w-5" />
-          </button>
+          {isHome && (
+            <button
+              aria-label="Open menu"
+              className="grid h-10 w-10 place-items-center rounded-full border border-line md:hidden"
+              onClick={() => setOpen(true)}
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+          )}
         </div>
       </motion.header>
 
@@ -613,7 +619,7 @@ export function Hero() {
 
 export function AboutMe() {
   return (
-    <section id="about-me" className="relative bg-surface/60">
+    <section id="about" className="relative bg-surface/60">
       <div className="w-full px-4 py-20 md:px-8 md:py-32 lg:px-[120px]">
 
         {/* Section Header */}
@@ -637,20 +643,56 @@ export function AboutMe() {
               I design products for forward-thinking companies. The result - products that scale, and impact that lasts.
             </h3>
 
-            <p className="mt-10 md:mt-16 text-base leading-relaxed text-ink-soft md:text-[1.1rem]">
-              I&apos;m <span className="text-ink font-medium">Amitkumar Tadvi</span> - a Senior Product Designer with
-              9+ years of experience leading end-to-end UX strategy and user-centered design for enterprise SaaS products.
-              I specialize in turning ambiguous, 0-to-1 requirements into scalable design systems and data-informed interfaces
-              that cross-functional teams - product, engineering, and business - actually adopt. My work spans aviation,
-              healthcare, HR tech, fintech, and AI copilots, with deep experience in B2B SaaS workflows, usability testing,
-              and accessible design.
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-ink-soft md:text-[1.1rem]">
-              Much like navigating the vastness of space, guiding a product from zero to launch requires a steady hand and a clear trajectory. As a product designer and design leader, I view complex enterprise systems as constellations—each feature a star that must align perfectly to form a cohesive universe. I thrive on bringing order to the chaos of the unknown, mapping out strategic orbits for cross-functional teams, and ensuring we all move at escape velocity toward a singular, stellar product experience. I believe great design goes beyond aesthetics - it solves real business problems. By bridging complex engineering constraints with intuitive user needs, I deliver seamless solutions that reduce friction, improve accessibility, and drive measurable growth.
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-ink-soft md:text-[1.1rem]">
-              Now, I&apos;m ready for my next cosmic adventure—exploring new galaxies of creativity, co-creating bold ideas, and turning ambitious design dreams into reality. Whether it&apos;s crafting scalable enterprise systems or pioneering <span className="bg-gradient-to-r from-[#FF451A] to-[#FF8A00] bg-clip-text text-transparent font-medium">AI-driven experiences</span>, I am always looking to push the boundaries of what&apos;s possible on the next frontier.
-            </p>
+            <div className="mt-10 md:mt-16 space-y-6 text-base leading-relaxed text-ink-soft md:text-[1.1rem]">
+              <p>
+                I&apos;m <span className="text-ink font-medium">Amitkumar Tadvi</span> - a Senior Product Designer with
+                9+ years of experience leading end-to-end UX strategy and user-centered design for enterprise SaaS products.
+                I specialize in turning ambiguous, 0-to-1 requirements into scalable design systems and data-informed interfaces
+                that cross-functional teams - product, engineering, and business - actually adopt. My work spans aviation,
+                healthcare, HR tech, fintech, and AI copilots, with deep experience in B2B SaaS workflows, usability testing,
+                and accessible design.
+              </p>
+              <p>
+                Much like navigating the vastness of space, guiding a product from zero to launch requires a steady hand and a clear trajectory. As a product designer and design leader, I view complex enterprise systems as constellations—each feature a star that must align perfectly to form a cohesive universe. I thrive on bringing order to the chaos of the unknown, mapping out strategic orbits for cross-functional teams, and ensuring we all move at escape velocity toward a singular, stellar product experience. I believe great design goes beyond aesthetics - it solves real business problems. By bridging complex engineering constraints with intuitive user needs, I deliver seamless solutions that reduce friction, improve accessibility, and drive measurable growth.
+              </p>
+              <p>
+                Now, I&apos;m ready for my next cosmic adventure—exploring new galaxies of creativity, co-creating bold ideas, and turning ambitious design dreams into reality. Whether it&apos;s crafting scalable enterprise systems or pioneering <span className="bg-gradient-to-r from-[#FF451A] to-[#FF8A00] bg-clip-text text-transparent font-medium">AI-driven experiences</span>, I am always looking to push the boundaries of what&apos;s possible on the next frontier.
+              </p>
+            </div>
+            
+            {/* Horizontal Quick Hits & CTAs */}
+            <div className="mt-12 md:mt-16 pt-10 border-t border-line flex flex-col gap-10">
+              
+              <div className="flex flex-col md:flex-row gap-10 md:gap-16">
+                <div className="flex-1">
+                  <h4 className="font-display text-lg text-ink mb-4">Core Focus</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {["Enterprise SaaS", "AI Copilots", "B2B Workflows", "Complex Dashboards", "0→1 Product Design"].map(skill => (
+                      <span key={skill} className="px-3 py-1.5 bg-background border border-line rounded-full text-xs font-medium text-ink-soft">{skill}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex-1">
+                  <h4 className="font-display text-lg text-ink mb-4">Design Toolkit</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {["Figma", "Design Systems", "Protopie", "UX Strategy", "User Research", "Wireframing", "Interaction Design"].map(tool => (
+                      <span key={tool} className="px-3 py-1.5 bg-background border border-line rounded-full text-xs font-medium text-ink-soft">{tool}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 mt-2">
+                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 text-sm font-medium text-background transition-colors hover:bg-accent w-full sm:w-auto text-center">
+                  Download Resume
+                </a>
+                <a href="https://www.linkedin.com/in/amitinnovatesux/" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-8 py-4 text-sm font-medium text-ink transition-colors hover:bg-surface w-full sm:w-auto text-center">
+                  Connect on LinkedIn
+                </a>
+              </div>
+            </div>
+            
           </div>
         </div>
 
@@ -1520,14 +1562,14 @@ export function Contact() {
             </SectionLabel>
 
             <RevealText
-              text="Have a problem"
+              text="Have a problem "
               as="h2"
               className="font-display text-5xl leading-[1.6] text-background md:text-[6vw]"
             />
             <RevealText
               text={"nobody's cracked yet?\u00A0"}
               as="h2"
-              className="font-display text-5xl leading-[1.6] italic text-accent md:text-[6vw]"
+              className="font-display text-[52px] font-semibold leading-[1.6] italic text-accent md:text-[6.5vw]"
               delay={0.15}
             />
 
@@ -1538,22 +1580,21 @@ export function Contact() {
               </p>
 
               <div className="md:col-span-6 md:col-start-7 flex flex-col items-start md:items-end gap-6">
-                <MagneticButton href="mailto:amittadvi1412@gmail.com">
-                  amittadvi1412@gmail.com
-                </MagneticButton>
-                <div className="flex flex-wrap gap-4 text-sm text-background/70 md:justify-end">
-                  <a href="#" className="story-link">
-                    LinkedIn
-                  </a>
-                  <a href="#" className="story-link">
-                    Read.cv
-                  </a>
-                  <a href="#" className="story-link">
-                    Dribbble
-                  </a>
-                  <a href="#" className="story-link">
-                    Substack
-                  </a>
+                <div className="flex flex-col items-center gap-6">
+                  <MagneticButton href="mailto:amittadvi1412@gmail.com">
+                    amittadvi1412@gmail.com
+                  </MagneticButton>
+                  <div className="flex w-full justify-between text-sm text-background/70 px-2">
+                    <a href="https://www.linkedin.com/in/amitinnovatesux/" target="_blank" rel="noreferrer" className="story-link hover:text-white transition-colors">
+                      LinkedIn
+                    </a>
+                    <a href="https://www.behance.net/amittadvi" target="_blank" rel="noreferrer" className="story-link hover:text-white transition-colors">
+                      Behance
+                    </a>
+                    <a href="https://dribbble.com/Scyla_FX1412" target="_blank" rel="noreferrer" className="story-link hover:text-white transition-colors">
+                      Dribbble
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
