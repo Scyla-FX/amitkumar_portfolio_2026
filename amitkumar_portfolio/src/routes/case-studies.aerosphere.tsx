@@ -379,8 +379,8 @@ function CaseStudyDetail() {
             ))}
           </div>
           
-          <div className="w-full h-[350px] md:h-[450px] mt-16 rounded-[2rem] overflow-hidden bg-surface border border-line relative shadow-sm group">
-            <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&q=80&w=1200" alt="Wireframing process" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div className="w-4/5 mx-auto h-auto mt-16 group">
+            <img src="/aerospeherescreens.png" alt="Aerosphere User Flows and Wireframes" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
           </div>
         </section>
 

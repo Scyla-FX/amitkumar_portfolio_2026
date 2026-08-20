@@ -318,8 +318,8 @@ function VitaMindCaseStudy() {
             ))}
           </div>
           
-          <div className="w-full h-[500px] md:h-[600px] lg:h-[700px] mt-16 rounded-[2rem] overflow-hidden bg-surface border border-line shadow-sm group relative">
-            <img src="/vitamind-flows-mockup-v2.jpg?v=3" alt="High-fidelity User Flows Mockup" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]" />
+          <div className="w-4/5 mx-auto h-auto mt-16 group">
+            <img src="/vitamind_screens.png" alt="High-fidelity User Flows Mockup" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]" />
           </div>
         </section>
 
