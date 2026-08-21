@@ -31,6 +31,7 @@ import {
 } from "lucide-react";
 import heroOverlay from "../assets/hero-overlay.png";
 
+
 /* ------------------------------------------------------------------ */
 /*  Utilities                                                          */
 /* ------------------------------------------------------------------ */
@@ -473,100 +474,36 @@ function SocialButton({ icon }: { icon: string }) {
 }
 
 
-const EXPERTISE_LIST = [
-  "UI / UX Design",
-  "Design Systems",
-  "Brand Identity",
-  "Growth Design",
-  "Content Design",
+
+
+const HERO_PROJECTS = [
+  { img: "/aerosphere-featured.png", link: "/case-studies/aerosphere" },
+  { img: "/vitamind-featured.png", link: "/case-studies/vitamind-ai" },
+  { img: "/credin-featured.png", link: "/case-studies/credin" },
 ];
-
-function TypewriterLoop() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((current) => (current + 1) % EXPERTISE_LIST.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const currentText = EXPERTISE_LIST[index];
-  const characters = currentText.split("");
-
-  return (
-    <div className="relative inline-flex flex-col ml-2 md:ml-3">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={index}
-          className="flex whitespace-nowrap"
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          variants={{
-            visible: {
-              transition: { staggerChildren: 0.055, delayChildren: 0.1 }
-            },
-            exit: {
-              transition: { staggerChildren: 0.022, staggerDirection: 1 }
-            }
-          }}
-        >
-          {characters.map((char, i) => (
-            <motion.span
-              key={i}
-              variants={{
-                hidden: { y: 20, opacity: 0, filter: "blur(8px)" },
-                visible: { y: 0, opacity: 1, filter: "blur(0px)", transition: { duration: 0.5, ease: "easeOut" } },
-                exit: { y: -18, opacity: 0, filter: "blur(10px)", transition: { duration: 0.28, ease: "easeIn" } }
-              }}
-              className="inline-block"
-            >
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
-          ))}
-        </motion.div>
-      </AnimatePresence>
-    </div>
-  );
-}
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
+  const [projectIndex, setProjectIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProjectIndex((prev) => (prev + 1) % HERO_PROJECTS.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
   return (
-    <section id="top" ref={ref} className="relative px-4 pb-20 pt-28 md:px-8 lg:px-[120px] md:pt-[130px]">
+    <section id="top" ref={ref} className="relative px-4 pb-12 pt-28 md:px-8 lg:px-[120px] md:pt-[130px] overflow-hidden font-sans">
       <div className="w-full">
-        {/* Header above the card */}
-        <motion.div 
-          initial="hidden" 
-          animate="show"
-          className="mb-10 md:mb-14 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end"
-        >
-          <motion.h1 
-            custom={0}
-            variants={fadeUp}
-            className="font-display text-xl font-medium leading-none text-ink md:text-3xl"
-          >
-            Amitkumar Tadvi
-          </motion.h1>
-          <motion.div custom={2} variants={fadeUp} className="flex items-center gap-3 pb-0.5">
-            <span className="hidden h-px w-6 bg-line md:block" />
-            <p className="font-display text-base italic text-ink-soft md:text-xl">
-              Product Designer
-            </p>
-          </motion.div>
-        </motion.div>
-
-        {/* Main Gradient Box */}
         <motion.div
           style={{ y }}
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: EASE, delay: 0.1 }}
-          className="relative flex min-h-[75vh] flex-col justify-end overflow-hidden rounded-[2rem] shadow-2xl md:rounded-[2.5rem] p-6 md:p-10"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: EASE }}
+          className="relative flex min-h-[50vh] md:min-h-[55vh] flex-col justify-between overflow-hidden rounded-[2rem] shadow-2xl md:rounded-[2.5rem] p-8 sm:p-10 md:p-16 text-white"
         >
           {/* User's Uploaded Image */}
           <img src={heroOverlay} alt="Hero background" className="absolute inset-0 h-full w-full object-cover" />
@@ -579,31 +516,98 @@ export function Hero() {
 
           <div className="pointer-events-none absolute inset-0 grain opacity-20" aria-hidden />
 
-          {/* Content Inside Box */}
-          <div className="relative z-10 w-full">
-            <div className="mb-10 flex flex-col items-start justify-between gap-10 md:flex-row md:items-end">
-              {/* Left: Avatars & Heading */}
-              <div className="max-w-4xl">
-                <div className="mb-5 flex -space-x-3">
-                  <img src="https://i.pravatar.cc/100?img=11" className="h-10 w-10 rounded-full border-2 border-background object-cover shadow-sm" />
-                  <img src="https://i.pravatar.cc/100?img=12" className="h-10 w-10 rounded-full border-2 border-background object-cover shadow-sm" />
-                  <img src="https://i.pravatar.cc/100?img=13" className="h-10 w-10 rounded-full border-2 border-background object-cover shadow-sm" />
-                  <img src="https://i.pravatar.cc/100?img=14" className="h-10 w-10 rounded-full border-2 border-background object-cover shadow-sm" />
-                </div>
-                <h2 className="text-4xl font-semibold leading-[1.4] tracking-[-0.02em] text-white md:text-5xl lg:text-[3.5rem] flex flex-wrap items-baseline">
-                  <RevealText text="We Build Digital Services with" className="inline-block mr-2" />
-                  <TypewriterLoop />
-                </h2>
+          {/* Floating Element - Top Right (hidden below 900px) */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4, ease: EASE }}
+            whileHover={{ y: -5 }}
+            className="absolute z-20 top-12 right-12 hidden lg:block w-[280px] bg-white/5 backdrop-blur-md rounded-[24px] p-2 border border-white/10 shadow-2xl overflow-hidden group cursor-pointer"
+          >
+            <Link to={HERO_PROJECTS[projectIndex].link} className="block relative w-full rounded-[16px] overflow-hidden aspect-[4/3] bg-black/20">
+              {HERO_PROJECTS.map((proj, idx) => (
+                <img 
+                  key={idx}
+                  src={proj.img} 
+                  alt="Featured Case Study" 
+                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 ${idx === projectIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
+                />
+              ))}
+              <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#1B2A3D]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute z-30 top-3 right-3 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/20 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
+                <ArrowUpRight className="w-4 h-4 text-white" />
+              </div>
+              <div className="absolute z-30 bottom-3 left-3 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-75 pointer-events-none">
+                <span className="px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/20 text-[11px] uppercase tracking-wider font-medium text-white shadow-sm">
+                  View Project
+                </span>
+              </div>
+            </Link>
+          </motion.div>
+
+          <div className="relative z-10 w-full flex flex-col min-h-[50vh] md:min-h-[55vh] justify-between">
+            {/* Top Row */}
+            <div className="flex flex-col lg:flex-row justify-between lg:w-[calc(100%-320px)] gap-12">
+              {/* Left Top */}
+              <div className="flex-1 max-w-[650px]">
+                <motion.div custom={0} variants={fadeUp} initial="hidden" animate="show" className="flex items-center gap-3 mb-8">
+                  <div className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E8A855] opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#E8A855]"></span>
+                  </div>
+                  <span className="text-xs font-mono uppercase tracking-[0.15em] text-white/70">Product Designer & Developer</span>
+                </motion.div>
+                
+                <motion.h1 
+                  custom={1} variants={fadeUp} initial="hidden" animate="show"
+                  className="text-[44px] sm:text-[56px] md:text-[64px] font-bold leading-[1.4] tracking-tight mb-8"
+                >
+                  We build digital products with <span className="text-[#E8A855] italic font-serif">intent.</span>
+                </motion.h1>
               </div>
 
-
+              {/* Right Top Stats */}
+              <motion.div custom={2} variants={fadeUp} initial="hidden" animate="show" className="flex flex-row lg:flex-col gap-6 lg:gap-8 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0">
+                <div className="flex flex-col min-w-[120px]">
+                  <span className="font-mono text-3xl font-medium text-white tabular-nums">30+</span>
+                  <span className="text-xs text-white/60 mt-1 uppercase tracking-widest font-medium">Projects shipped</span>
+                </div>
+                <div className="flex flex-col min-w-[120px]">
+                  <span className="font-mono text-3xl font-medium text-white tabular-nums">9yrs</span>
+                  <span className="text-xs text-white/60 mt-1 uppercase tracking-widest font-medium">In practice</span>
+                </div>
+                <div className="flex flex-col min-w-[120px]">
+                  <span className="font-mono text-3xl font-medium text-white tabular-nums">98%</span>
+                  <span className="text-xs text-white/60 mt-1 uppercase tracking-widest font-medium">Client return rate</span>
+                </div>
+              </motion.div>
             </div>
 
-
+            {/* Bottom Row */}
+            <motion.div custom={3} variants={fadeUp} initial="hidden" animate="show" className="flex flex-col md:flex-row items-start md:items-end justify-between mt-16 md:mt-20 gap-10">
+              {/* Left Bottom */}
+              <div className="max-w-[450px]">
+                <p className="text-[17px] text-white/80 leading-relaxed font-light">
+                  Partnering with ambitious founders and engineering teams to transform complex requirements into seamless, scalable user experiences.
+                </p>
+              </div>
+              
+              {/* Right Bottom */}
+              <div className="flex items-center gap-5">
+                <div className="flex -space-x-3">
+                  <img src="https://i.pravatar.cc/100?img=4" className="h-11 w-11 rounded-full border-2 border-[#1B2A3D] object-cover shadow-sm" />
+                  <img src="https://i.pravatar.cc/100?img=5" className="h-11 w-11 rounded-full border-2 border-[#1B2A3D] object-cover shadow-sm" />
+                  <img src="https://i.pravatar.cc/100?img=6" className="h-11 w-11 rounded-full border-2 border-[#1B2A3D] object-cover shadow-sm" />
+                  <img src="https://i.pravatar.cc/100?img=7" className="h-11 w-11 rounded-full border-2 border-[#1B2A3D] object-cover shadow-sm" />
+                </div>
+                <div className="flex flex-col text-[13px] text-white/90 leading-[1.4]">
+                  <span className="font-medium">Trusted by 20+ founders</span>
+                  <span className="text-white/60">across US & EU</span>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
-
-
       </div>
     </section>
   );

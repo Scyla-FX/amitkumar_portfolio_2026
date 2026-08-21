@@ -6,7 +6,7 @@ import credinHeroImg from "@/assets/credin-hero.jpg";
 import credinProblemImg from "@/assets/credin-problem.png";
 import credinIaImg from "@/assets/credin-ia.jpg";
 
-import credinWireframesImg from "@/assets/credin-screens-wireframe.png";
+
 
 export const Route = createFileRoute(
   "/case-studies/credin"
@@ -360,7 +360,7 @@ function CredinCaseStudy() {
           </div>
 
           <div className="w-full mt-16 flex items-center justify-center relative group">
-            <img src={credinWireframesImg} alt="Credin User Flows and Screens" className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]" />
+            <img src="/appscreens.png" alt="Credin User Flows and Screens" className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]" />
           </div>
         </section>
 
