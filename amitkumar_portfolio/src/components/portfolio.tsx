@@ -516,38 +516,9 @@ export function Hero() {
 
           <div className="pointer-events-none absolute inset-0 grain opacity-20" aria-hidden />
 
-          {/* Floating Element - Top Right (hidden below 900px) */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4, ease: EASE }}
-            whileHover={{ y: -5 }}
-            className="absolute z-20 top-12 right-12 hidden lg:block w-[280px] bg-white/5 backdrop-blur-md rounded-[24px] p-2 border border-white/10 shadow-2xl overflow-hidden group cursor-pointer"
-          >
-            <Link to={HERO_PROJECTS[projectIndex].link} className="block relative w-full rounded-[16px] overflow-hidden aspect-[4/3] bg-black/20">
-              {HERO_PROJECTS.map((proj, idx) => (
-                <img 
-                  key={idx}
-                  src={proj.img} 
-                  alt="Featured Case Study" 
-                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 ${idx === projectIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
-                />
-              ))}
-              <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#1B2A3D]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-              <div className="absolute z-30 top-3 right-3 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/20 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
-                <ArrowUpRight className="w-4 h-4 text-white" />
-              </div>
-              <div className="absolute z-30 bottom-3 left-3 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-75 pointer-events-none">
-                <span className="px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/20 text-[11px] uppercase tracking-wider font-medium text-white shadow-sm">
-                  View Project
-                </span>
-              </div>
-            </Link>
-          </motion.div>
-
           <div className="relative z-10 w-full flex flex-col min-h-[50vh] md:min-h-[55vh] justify-between">
             {/* Top Row */}
-            <div className="flex flex-col lg:flex-row justify-between lg:w-[calc(100%-320px)] gap-12">
+            <div className="flex flex-col lg:flex-row justify-between w-full gap-12">
               {/* Left Top */}
               <div className="flex-1 max-w-[650px]">
                 <motion.div custom={0} variants={fadeUp} initial="hidden" animate="show" className="flex items-center gap-3 mb-8">
@@ -567,16 +538,16 @@ export function Hero() {
               </div>
 
               {/* Right Top Stats */}
-              <motion.div custom={2} variants={fadeUp} initial="hidden" animate="show" className="flex flex-row lg:flex-col gap-6 lg:gap-8 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0">
-                <div className="flex flex-col min-w-[120px]">
+              <motion.div custom={2} variants={fadeUp} initial="hidden" animate="show" className="flex flex-row lg:flex-col gap-6 lg:gap-8 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 lg:items-end">
+                <div className="flex flex-col min-w-[120px] lg:text-right">
                   <span className="font-mono text-3xl font-medium text-white tabular-nums">30+</span>
                   <span className="text-xs text-white/60 mt-1 uppercase tracking-widest font-medium">Projects shipped</span>
                 </div>
-                <div className="flex flex-col min-w-[120px]">
+                <div className="flex flex-col min-w-[120px] lg:text-right">
                   <span className="font-mono text-3xl font-medium text-white tabular-nums">9yrs</span>
                   <span className="text-xs text-white/60 mt-1 uppercase tracking-widest font-medium">In practice</span>
                 </div>
-                <div className="flex flex-col min-w-[120px]">
+                <div className="flex flex-col min-w-[120px] lg:text-right">
                   <span className="font-mono text-3xl font-medium text-white tabular-nums">98%</span>
                   <span className="text-xs text-white/60 mt-1 uppercase tracking-widest font-medium">Client return rate</span>
                 </div>
@@ -593,16 +564,47 @@ export function Hero() {
               </div>
               
               {/* Right Bottom */}
-              <div className="flex items-center gap-5">
-                <div className="flex -space-x-3">
-                  <img src="https://i.pravatar.cc/100?img=4" className="h-11 w-11 rounded-full border-2 border-[#1B2A3D] object-cover shadow-sm" />
-                  <img src="https://i.pravatar.cc/100?img=5" className="h-11 w-11 rounded-full border-2 border-[#1B2A3D] object-cover shadow-sm" />
-                  <img src="https://i.pravatar.cc/100?img=6" className="h-11 w-11 rounded-full border-2 border-[#1B2A3D] object-cover shadow-sm" />
-                  <img src="https://i.pravatar.cc/100?img=7" className="h-11 w-11 rounded-full border-2 border-[#1B2A3D] object-cover shadow-sm" />
-                </div>
-                <div className="flex flex-col text-[13px] text-white/90 leading-[1.4]">
-                  <span className="font-medium">Trusted by 20+ founders</span>
-                  <span className="text-white/60">across US & EU</span>
+              <div className="flex flex-col items-end gap-6">
+                {/* Floating Element - Shifted above trusted founders */}
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.4, ease: EASE }}
+                  whileHover={{ y: -5 }}
+                  className="hidden lg:block w-[280px] md:w-[320px] bg-white/5 backdrop-blur-md rounded-[24px] p-2 border border-white/10 shadow-2xl overflow-hidden group cursor-pointer"
+                >
+                  <Link to={HERO_PROJECTS[projectIndex].link} className="block relative w-full rounded-[16px] overflow-hidden aspect-[32/9] bg-black/20">
+                    {HERO_PROJECTS.map((proj, idx) => (
+                      <img 
+                        key={idx}
+                        src={proj.img} 
+                        alt="Featured Case Study" 
+                        className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 ${idx === projectIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
+                      />
+                    ))}
+                    <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#1B2A3D]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                    <div className="absolute z-30 top-3 right-3 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/20 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
+                      <ArrowUpRight className="w-4 h-4 text-white" />
+                    </div>
+                    <div className="absolute z-30 bottom-3 left-3 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-75 pointer-events-none">
+                      <span className="px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/20 text-[11px] uppercase tracking-wider font-medium text-white shadow-sm">
+                        View Project
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+
+                <div className="flex items-center gap-5">
+                  <div className="flex -space-x-3">
+                    <img src="https://i.pravatar.cc/100?img=4" className="h-11 w-11 rounded-full border-2 border-[#1B2A3D] object-cover shadow-sm" />
+                    <img src="https://i.pravatar.cc/100?img=5" className="h-11 w-11 rounded-full border-2 border-[#1B2A3D] object-cover shadow-sm" />
+                    <img src="https://i.pravatar.cc/100?img=6" className="h-11 w-11 rounded-full border-2 border-[#1B2A3D] object-cover shadow-sm" />
+                    <img src="https://i.pravatar.cc/100?img=7" className="h-11 w-11 rounded-full border-2 border-[#1B2A3D] object-cover shadow-sm" />
+                  </div>
+                  <div className="flex flex-col text-[13px] text-white/90 leading-[1.4] text-left">
+                    <span className="font-medium">Trusted by 20+ founders</span>
+                    <span className="text-white/60">across US & EU</span>
+                  </div>
                 </div>
               </div>
             </motion.div>
