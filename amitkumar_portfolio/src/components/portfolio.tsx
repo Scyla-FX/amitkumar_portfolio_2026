@@ -1445,7 +1445,7 @@ export function Toolkit() {
 
 const QUOTES = [
   {
-    q: "Amit is the rare designer who improves the product roadmap, not just the pixels. He earned engineering trust in a week. During our time working together, he consistently demonstrated an incredible ability to bridge the gap between high-level business strategy and granular user interface details. His approach to design systems completely transformed our development speed, allowing us to ship features 30% faster without sacrificing visual quality. He doesn't just ask 'what should this look like?', he asks 'what problem are we actually trying to solve?' which fundamentally shifts how the entire product team operates. Highly recommended.",
+    q: "Amit is the rare designer who improves the product roadmap, not just the pixels. He earned engineering trust in a week. During our time working together, he consistently demonstrated an incredible ability to bridge the gap between high-level business strategy and granular user interface details. His approach to design systems completely transformed our development speed, allowing us to ship features noticeably faster without sacrificing visual quality. He doesn't just ask 'what should this look like?', he asks 'what problem are we actually trying to solve?' which fundamentally shifts how the entire product team operates. Highly recommended.",
     n: "VP Product, Aviation SaaS (client details withheld under NDA)",
   },
   {
