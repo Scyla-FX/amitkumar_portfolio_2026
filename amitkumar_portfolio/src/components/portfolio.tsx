@@ -254,20 +254,20 @@ export function Loader() {
           className="fixed inset-0 z-[100] flex flex-col justify-between bg-ink px-6 py-8 text-background md:px-10 md:py-10"
         >
           <div className="flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.28em] text-background/60">
-            <span>Amit Tadvi</span>
+            <span>Amitkumar Tadvi</span>
             <span>Portfolio · 2026</span>
           </div>
 
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-start gap-3">
             <RevealText
               text="Designing the systems"
               as="h2"
-              className="font-display text-4xl leading-[0.95] text-background sm:text-5xl md:text-5xl"
+              className="font-display text-5xl leading-[0.95] text-background sm:text-6xl md:text-7xl"
             />
             <RevealText
               text="behind serious software."
               as="h2"
-              className="font-display text-4xl leading-[0.95] text-background/70 sm:text-5xl md:text-5xl"
+              className="font-display text-5xl leading-[0.95] text-background/70 sm:text-6xl md:text-7xl"
               delay={0.25}
             />
           </div>
@@ -457,14 +457,15 @@ export function Nav() {
               onClick={() => setContactOpen(false)}
               className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm"
             />
-            {/* Slide-out Panel */}
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: "0%" }}
-              exit={{ x: "100%" }}
-              transition={{ duration: 0.5, ease: EASE }}
-              className="fixed inset-y-0 right-0 z-[110] w-full max-w-md bg-background shadow-2xl flex flex-col border-l border-line overflow-y-auto"
-            >
+            {/* Centered Modal */}
+            <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-6 pointer-events-none">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                transition={{ duration: 0.4, ease: EASE }}
+                className="w-full max-w-[500px] max-h-[90vh] bg-background shadow-2xl rounded-3xl flex flex-col border border-line overflow-y-auto pointer-events-auto"
+              >
               <div className="flex items-center justify-between p-6 border-b border-line">
                 <span className="font-display text-2xl text-ink">Get in touch</span>
                 <button
@@ -515,6 +516,7 @@ export function Nav() {
                 </div>
               </div>
             </motion.div>
+            </div>
           </>
         )}
       </AnimatePresence>
@@ -1669,8 +1671,8 @@ export function Contact() {
 export function Footer() {
   return (
     <footer className="border-t border-line px-4 py-12 md:px-8 lg:px-[120px]">
-      <div className="flex w-full flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-        <div className="flex items-center gap-3">
+      <div className="relative flex w-full flex-col items-center gap-6 md:flex-row md:justify-center">
+        <div className="flex items-center gap-3 md:absolute md:left-0">
           <span className="grid h-8 w-8 place-items-center rounded-full bg-ink text-background font-display text-lg">
             a
           </span>
@@ -1681,16 +1683,9 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground text-center">
+        <div className="font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground text-center max-w-full">
           Charting products through the unknown, one constellation at a time
         </div>
-        <Link
-          to="/"
-          className="text-sm text-ink-soft transition-colors hover:text-ink"
-          aria-label="Back to top"
-        >
-          Back to top ↑
-        </Link>
       </div>
     </footer>
   );
@@ -1903,6 +1898,80 @@ export function ArchitectureBreak() {
         />
       </motion.div>
     </div>
+  );
+}
+
+export function ContactModal({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) {
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm"
+          />
+          <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-6 pointer-events-none">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              className="w-full max-w-[500px] max-h-[90vh] bg-background shadow-2xl rounded-3xl flex flex-col border border-line overflow-y-auto pointer-events-auto"
+            >
+              <div className="flex items-center justify-between p-6 border-b border-line shrink-0">
+                <span className="font-display text-2xl text-ink">Get in touch</span>
+                <button
+                  aria-label="Close contact"
+                  onClick={onClose}
+                  className="grid h-10 w-10 place-items-center rounded-full border border-line hover:bg-surface transition-colors"
+                >
+                  <X className="h-5 w-5 text-ink" />
+                </button>
+              </div>
+              <div className="p-8 flex flex-col gap-10 flex-1">
+                <div>
+                  <h3 className="font-display text-3xl text-ink mb-2">Let's build something great.</h3>
+                  <p className="text-ink-soft/90 font-light leading-relaxed">
+                    I'm always open to discussing product design work, partnerships, or consulting opportunities.
+                  </p>
+                </div>
+                <div className="space-y-6">
+                  <div>
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground block mb-1">Name</span>
+                    <span className="text-lg font-medium text-ink">Tadvi Amitkumar Dhirajbhai</span>
+                  </div>
+                  <div>
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground block mb-1">Email</span>
+                    <a href="mailto:amittadvi1412@gmail.com" onClick={onClose} className="text-lg font-medium text-ink hover:text-accent transition-colors underline decoration-line underline-offset-4 hover:decoration-accent">amittadvi1412@gmail.com</a>
+                  </div>
+                  <div>
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground block mb-1">Contact</span>
+                    <a href="tel:+919898086164" onClick={onClose} className="text-lg font-medium text-ink hover:text-accent transition-colors">+91 98980 86164</a>
+                  </div>
+                </div>
+                <div className="mt-auto pt-10 border-t border-line shrink-0">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground block mb-4">Connect with me</span>
+                  <div className="flex items-center gap-4">
+                    <a href="https://www.linkedin.com/in/amitinnovatesux/" onClick={onClose} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-12 h-12 rounded-full border border-line bg-surface flex items-center justify-center hover:border-ink hover:bg-ink hover:text-background transition-all">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+                    </a>
+                    <a href="https://www.behance.net/amittadvi" onClick={onClose} target="_blank" rel="noopener noreferrer" aria-label="Behance" className="w-12 h-12 rounded-full border border-line bg-surface flex items-center justify-center hover:border-ink hover:bg-ink hover:text-background transition-all">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.918 2.338-5.312 5.48-5.312 3.058 0 5.422 1.397 5.422 5.068 0 .548-.052 1.096-.135 1.458h-7.391c.081 1.792 1.258 2.502 2.775 2.502 1.636 0 2.368-.962 2.511-1.464h2.003zm-2.855-3.31c-.1-1.378-1.218-1.879-2.327-1.879-1.229 0-2.228.636-2.47 1.879h4.797zm-11.871-3.69c-1.583 0-4.083.473-4.083 4.542 0 4.148 2.51 4.458 4.095 4.458 2.115 0 3.905-1.451 3.905-4.5 0-2.91-1.611-4.5-3.917-4.5zm-5.003-8h5.922c2.095 0 3.791.956 3.791 3.238 0 1.58-1.118 2.449-2.261 2.809 1.411.238 2.72 1.488 2.72 3.324 0 2.59-1.921 3.629-4.28 3.629h-5.892v-13zm4 5.372h1.492c.983 0 1.704-.42 1.704-1.639 0-1.25-.794-1.572-1.63-1.572h-1.566v3.211zm0 5.628h1.765c1.139 0 2.05-.443 2.05-1.999 0-1.582-.951-1.961-2.029-1.961h-1.786v3.96z"/></svg>
+                    </a>
+                    <a href="https://dribbble.com/Scyla_FX1412" onClick={onClose} target="_blank" rel="noopener noreferrer" aria-label="Dribbble" className="w-12 h-12 rounded-full border border-line bg-surface flex items-center justify-center hover:border-ink hover:bg-ink hover:text-background transition-all">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm8.932 9.071c-.732-.239-2.316-.677-4.22-.924.908-1.722 1.624-3.551 1.936-4.512 1.344 1.365 2.193 3.298 2.284 5.436zm-2.822-6.52c-.328.989-1.077 2.871-2.012 4.636-2.585-.688-5.321-.861-6.195-.898.397-.991 1.708-3.959 3.513-5.26 1.758.261 3.344 1.004 4.694 1.522zm-6.241-1.534c-1.64.939-2.923 3.564-3.411 4.717-1.46.012-3.842.13-6.113.884 1.042-2.879 3.364-5.111 6.302-5.748 1.043.033 2.195.085 3.222.147zm-9.851 6.883c2.378-.718 4.96-.867 6.444-.88 1.488 2.853 2.502 6.136 2.877 7.424-2.89.69-5.914 1.559-7.79 3.219-1.121-1.623-1.782-3.606-1.782-5.746 0-1.408.243-2.766.685-4.017zm2.464 12.015c1.884-1.657 4.981-2.531 7.925-3.235 1.066 3.197 1.558 6.488 1.678 7.336-3.791.432-7.39-.775-9.603-4.101zm11.396.657c-.125-.9-.636-4.225-1.738-7.447 1.956.242 3.652.686 4.417.935-.494 3.03-2.477 5.518-5.011 6.512zm.643-8.528c-.803-.255-2.673-.728-4.802-.957-.358-1.229-1.328-4.469-2.748-7.234.821.036 3.593.189 6.223.896 1.026 1.986 1.493 4.545 1.327 7.295z"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </>
+      )}
+    </AnimatePresence>
   );
 }
 

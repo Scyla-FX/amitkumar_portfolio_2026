@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Nav, Footer, Cursor } from "@/components/portfolio";
+import { Nav, Footer, Cursor, ContactModal } from "@/components/portfolio";
 import { motion } from "framer-motion";
 import { ChevronRight, HeartPulse, Truck, Users, ShoppingBag, Briefcase, Plane, X, ZoomIn, ZoomOut } from "lucide-react";
 
@@ -39,6 +39,7 @@ function Chip({ children }: { children: React.ReactNode }) {
 function MobileAppPage() {
   const [activeScreens, setActiveScreens] = useState<string[] | null>(null);
   const [zoomLevel, setZoomLevel] = useState(1);
+  const [contactOpen, setContactOpen] = useState(false);
 
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -165,10 +166,7 @@ function MobileAppPage() {
                 <card.icon className="w-8 h-8 text-accent mb-6 stroke-[1.5px]" />
                 <h4 className="font-display text-xl font-medium text-ink mb-3">{card.title}</h4>
                 {/* TODO: replace placeholder */}
-                <p className="text-sm md:text-[15px] text-ink-soft/90 font-light leading-relaxed mb-6">{card.desc}</p>
-                <span className="text-accent text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center">
-                  View details <ChevronRight className="w-4 h-4 ml-1" />
-                </span>
+                <p className="text-sm md:text-[15px] text-ink-soft/90 font-light leading-relaxed">{card.desc}</p>
               </div>
             ))}
           </div>
@@ -393,11 +391,11 @@ function MobileAppPage() {
             {/* TODO: replace placeholder */}
             If you're building an app that needs to feel effortless, let's talk.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="mailto:amittadvi1412@gmail.com" className="px-8 py-4 rounded-full bg-ink text-background font-medium hover:bg-accent transition-colors">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mx-auto">
+            <button onClick={() => setContactOpen(true)} className="w-full sm:flex-1 py-4 rounded-full bg-ink text-background font-medium hover:bg-accent transition-colors text-center">
               Get in touch
-            </a>
-            <Link to="/" className="px-8 py-4 rounded-full bg-surface border border-line text-ink hover:bg-surface/80 transition-colors">
+            </button>
+            <Link to="/" className="w-full sm:flex-1 py-4 rounded-full bg-surface border border-line text-ink hover:bg-surface/80 transition-colors text-center">
               View full portfolio
             </Link>
           </div>
@@ -463,6 +461,8 @@ function MobileAppPage() {
           </div>
         </div>
       )}
+
+      <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
     </>
   );
 }

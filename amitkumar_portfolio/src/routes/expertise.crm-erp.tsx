@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Nav, Footer, Cursor } from "@/components/portfolio";
+import { Nav, Footer, Cursor, ContactModal } from "@/components/portfolio";
 import { motion } from "framer-motion";
 import { BarChart3, PackageSearch, Headset, Receipt, Users, Lock, Layers, Grid, Compass, ChevronRight, X, ZoomIn, ZoomOut } from "lucide-react";
 
@@ -39,6 +39,7 @@ function Chip({ children }: { children: React.ReactNode }) {
 function CrmErpPage() {
   const [activeImage, setActiveImage] = useState<string | null>(null);
   const [zoomLevel, setZoomLevel] = useState(1);
+  const [contactOpen, setContactOpen] = useState(false);
 
   const handleZoomIn = () => setZoomLevel(prev => Math.min(prev + 0.5, 3));
   const handleZoomOut = () => setZoomLevel(prev => Math.max(prev - 0.5, 0.5));
@@ -123,10 +124,7 @@ function CrmErpPage() {
               >
                 <card.icon className="w-8 h-8 text-accent mb-6 stroke-[1.5px]" />
                 <h4 className="font-display text-xl font-medium text-ink mb-3">{card.title}</h4>
-                <p className="text-sm md:text-[15px] text-ink-soft/90 font-light leading-relaxed mb-6">{card.desc}</p>
-                <span className="text-accent text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center">
-                  View case study <ChevronRight className="w-4 h-4 ml-1" />
-                </span>
+                <p className="text-sm md:text-[15px] text-ink-soft/90 font-light leading-relaxed">{card.desc}</p>
               </div>
             ))}
           </div>
@@ -259,11 +257,11 @@ function CrmErpPage() {
           <p className="text-base md:text-xl font-light text-ink-soft/90 mb-10 leading-relaxed max-w-2xl">
             Complex systems don't have to feel complicated. If you're building a CRM or ERP product and want it to feel this clear, let's talk.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="mailto:amittadvi1412@gmail.com" className="px-8 py-4 rounded-full bg-ink text-background font-medium hover:bg-accent transition-colors">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md mx-auto">
+            <button onClick={() => setContactOpen(true)} className="w-full sm:flex-1 py-4 rounded-full bg-ink text-background font-medium hover:bg-accent transition-colors text-center">
               Get in touch
-            </a>
-            <Link to="/" className="px-8 py-4 rounded-full bg-surface border border-line text-ink hover:bg-surface/80 transition-colors">
+            </button>
+            <Link to="/" className="w-full sm:flex-1 py-4 rounded-full bg-surface border border-line text-ink hover:bg-surface/80 transition-colors text-center">
               View full portfolio
             </Link>
           </div>
@@ -300,6 +298,8 @@ function CrmErpPage() {
           </div>
         </div>
       )}
+
+      <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
     </>
   );
 }
