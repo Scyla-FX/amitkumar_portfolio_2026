@@ -7,6 +7,7 @@ import {
   HeadContent,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { ArrowUp } from "lucide-react";
@@ -126,6 +127,12 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <QueryClientProvider client={queryClient}>
       <ScrollRestoration />
