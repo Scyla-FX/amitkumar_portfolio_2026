@@ -1956,13 +1956,13 @@ export function ContactModal({ isOpen, onClose }: { isOpen: boolean, onClose: ()
                   <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground block mb-4">Connect with me</span>
                   <div className="flex items-center gap-4">
                     <a href="https://www.linkedin.com/in/amitinnovatesux/" onClick={onClose} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-10 h-10 hover:opacity-80 transition-opacity">
-                      <img src="/images/icons/linkedin.png" alt="LinkedIn" className="w-full h-full object-contain" />
+                      <img src="/linkedin-app-icon.png" alt="LinkedIn" className="w-full h-full object-contain" />
                     </a>
                     <a href="https://www.behance.net/amittadvi" onClick={onClose} target="_blank" rel="noopener noreferrer" aria-label="Behance" className="w-10 h-10 hover:opacity-80 transition-opacity">
-                      <img src="/images/icons/behance.png" alt="Behance" className="w-full h-full object-contain" />
+                      <img src="/behance-square-color-icon.png" alt="Behance" className="w-full h-full object-contain" />
                     </a>
                     <a href="https://dribbble.com/Scyla_FX1412" onClick={onClose} target="_blank" rel="noopener noreferrer" aria-label="Dribbble" className="w-10 h-10 hover:opacity-80 transition-opacity">
-                      <img src="/images/icons/dribbble.png" alt="Dribbble" className="w-full h-full object-contain" />
+                      <img src="/dribbble-square-color-icon.png" alt="Dribbble" className="w-full h-full object-contain" />
                     </a>
                   </div>
                 </div>
