@@ -1450,7 +1450,7 @@ const QUOTES = [
   },
   {
     q: "I've had the absolute pleasure of working closely with Amit across two different companies now, first at our previous agency and now in our current enterprise role. As an app developer, it is incredibly rare to find a UI/UX designer who so deeply understands the technical constraints and engineering reality of shipping mobile and web applications. We delivered several complex, high-stakes projects together from scratch. Amit's design handoffs are flawless—his Figma files, component libraries, and interactive prototypes leave absolutely zero ambiguity for the dev team. He's not just a brilliant creative mind; he is a true partner to engineering who makes everyone around him build better software.",
-    n: "Harshit Darji — App Developer, ekZero",
+    n: "Harshit Darji — App Developer\nekZero",
   },
   {
     q: "He turned three years of workflow debt into a coherent system our teams actually use. It's the most consequential design work we've shipped in recent memory. Amit possesses this unique editorial eye that brings elegance to even the most chaotic, data-heavy enterprise dashboards. When he took over the core clinical workflows, he didn't just re-skin the UI; he conducted deep behavioral research with our operators and fundamentally reimagined how the information architecture should flow. The result was a platform that not only looks beautiful but drastically reduces cognitive load for our users. He is a phenomenal senior talent.",
@@ -1497,7 +1497,7 @@ export function Testimonials() {
             <blockquote className="pt-4 text-sm md:text-base leading-relaxed text-ink-soft">
               {q.q}
             </blockquote>
-            <figcaption className="mt-10 font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground">
+            <figcaption className="mt-10 font-mono text-[11px] uppercase tracking-[0.24em] text-muted-foreground whitespace-pre-line">
               {q.n}
             </figcaption>
           </motion.figure>
