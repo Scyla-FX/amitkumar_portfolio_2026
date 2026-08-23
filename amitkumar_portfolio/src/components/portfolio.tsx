@@ -724,7 +724,7 @@ export function AboutMe() {
                 <div className="flex-1">
                   <h4 className="font-display text-lg text-ink mb-4">Core Focus</h4>
                   <div className="flex flex-wrap gap-2">
-                    {["Enterprise SaaS", "AI Copilots", "B2B Workflows", "Complex Dashboards", "0→1 Product Design"].map(skill => (
+                    {["Enterprise SaaS", "AI-Driven Design", "B2B Workflows", "Complex Dashboards", "0→1 Product Design"].map(skill => (
                       <span key={skill} className="px-3 py-1.5 bg-background border border-line rounded-full text-xs font-medium text-ink-soft">{skill}</span>
                     ))}
                   </div>
