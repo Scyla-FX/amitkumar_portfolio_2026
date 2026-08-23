@@ -598,30 +598,30 @@ export function Hero() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E8A855] opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#E8A855]"></span>
                   </div>
-                  <span className="text-xs font-mono uppercase tracking-[0.15em] text-white/70">Product Designer & Developer</span>
+                  <span className="text-xs font-mono uppercase tracking-[0.15em] text-white/70">Senior Product Designer</span>
                 </motion.div>
                 
                 <motion.h1 
                   custom={1} variants={fadeUp} initial="hidden" animate="show"
                   className="text-[44px] sm:text-[56px] md:text-[64px] font-bold leading-[1.4] tracking-tight mb-8"
                 >
-                  We build digital products with <span className="text-[#E8A855] italic font-serif">intent.</span>
+                  I design digital products with <span className="text-[#E8A855] italic font-serif">intent.</span>
                 </motion.h1>
               </div>
 
               {/* Right Top Stats */}
               <motion.div custom={2} variants={fadeUp} initial="hidden" animate="show" className="flex flex-row lg:flex-col gap-6 lg:gap-8 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 lg:items-end">
                 <div className="flex flex-col min-w-[120px] lg:text-right">
-                  <span className="font-mono text-3xl font-medium text-white tabular-nums">30+</span>
-                  <span className="text-xs text-white/60 mt-1 uppercase tracking-widest font-medium">Projects shipped</span>
-                </div>
-                <div className="flex flex-col min-w-[120px] lg:text-right">
-                  <span className="font-mono text-3xl font-medium text-white tabular-nums">9yrs</span>
+                  <span className="font-mono text-3xl font-medium text-white tabular-nums">9 yrs</span>
                   <span className="text-xs text-white/60 mt-1 uppercase tracking-widest font-medium">In practice</span>
                 </div>
-                <div className="flex flex-col min-w-[120px] lg:text-right">
-                  <span className="font-mono text-3xl font-medium text-white tabular-nums">98%</span>
-                  <span className="text-xs text-white/60 mt-1 uppercase tracking-widest font-medium">Client return rate</span>
+                <div className="flex flex-col min-w-[200px] lg:max-w-[220px] lg:text-right">
+                  <span className="font-mono text-3xl font-medium text-white tabular-nums">5</span>
+                  <span className="text-[10px] sm:text-xs text-white/60 mt-1 uppercase tracking-widest font-medium leading-relaxed">Industries - Aviation, Healthcare, HR Tech, Fintech</span>
+                </div>
+                <div className="flex flex-col min-w-[140px] lg:text-right">
+                  <span className="font-mono text-3xl font-medium text-white tabular-nums">0&rarr;1</span>
+                  <span className="text-xs text-white/60 mt-1 uppercase tracking-widest font-medium">Enterprise systems shipped</span>
                 </div>
               </motion.div>
             </div>
@@ -631,13 +631,13 @@ export function Hero() {
               {/* Left Bottom */}
               <div className="max-w-[450px]">
                 <p className="text-[17px] text-white/80 leading-relaxed font-light">
-                  Partnering with ambitious founders and engineering teams to transform complex requirements into seamless, scalable user experiences.
+                  Partnering with founders and engineering teams to turn complex, ambiguous requirements into scalable, accessible user experiences.
                 </p>
               </div>
               
               {/* Right Bottom */}
-              <div className="flex flex-col items-end gap-6">
-                {/* Floating Element - Shifted above trusted founders */}
+              <div className="flex flex-col items-end gap-6 h-full justify-end">
+                {/* Floating Element - Shifted to bottom */}
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.9, y: 20 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -665,19 +665,6 @@ export function Hero() {
                     </div>
                   </Link>
                 </motion.div>
-
-                <div className="flex items-center gap-5">
-                  <div className="flex -space-x-3">
-                    <img src="https://i.pravatar.cc/100?img=4" className="h-11 w-11 rounded-full border-2 border-[#1B2A3D] object-cover shadow-sm" />
-                    <img src="https://i.pravatar.cc/100?img=5" className="h-11 w-11 rounded-full border-2 border-[#1B2A3D] object-cover shadow-sm" />
-                    <img src="https://i.pravatar.cc/100?img=6" className="h-11 w-11 rounded-full border-2 border-[#1B2A3D] object-cover shadow-sm" />
-                    <img src="https://i.pravatar.cc/100?img=7" className="h-11 w-11 rounded-full border-2 border-[#1B2A3D] object-cover shadow-sm" />
-                  </div>
-                  <div className="flex flex-col text-[13px] text-white/90 leading-[1.4] text-left">
-                    <span className="font-medium">Trusted by 20+ founders</span>
-                    <span className="text-white/60">across US & EU</span>
-                  </div>
-                </div>
               </div>
             </motion.div>
           </div>
@@ -717,18 +704,16 @@ export function AboutMe() {
 
             <div className="mt-10 md:mt-16 space-y-6 text-base leading-relaxed text-ink-soft md:text-[1.1rem]">
               <p>
-                I&apos;m <span className="text-ink font-medium">Amitkumar Tadvi</span> - a Senior Product Designer with
-                9+ years of experience leading end-to-end UX strategy and user-centered design for enterprise SaaS products.
-                I specialize in turning ambiguous, 0-to-1 requirements into scalable design systems and data-informed interfaces
-                that cross-functional teams - product, engineering, and business - actually adopt. My work spans aviation,
-                healthcare, HR tech, fintech, and AI copilots, with deep experience in B2B SaaS workflows, usability testing,
-                and accessible design.
+                I&apos;m <span className="text-ink font-medium">Amitkumar Tadvi</span> - a Senior Product Designer with 9+ years of experience leading end-to-end UX strategy and user-centered design for enterprise SaaS products. I specialize in turning ambiguous, 0-to-1 requirements into scalable design systems and data-informed interfaces that cross-functional teams - product, engineering, and business - actually adopt. My work spans aviation, healthcare, HR tech, and advertising, with deep experience in B2B SaaS workflows, usability testing, and accessible design.
               </p>
               <p>
-                Much like navigating the vastness of space, guiding a product from zero to launch requires a steady hand and a clear trajectory. As a product designer and design leader, I view complex enterprise systems as constellations—each feature a star that must align perfectly to form a cohesive universe. I thrive on bringing order to the chaos of the unknown, mapping out strategic orbits for cross-functional teams, and ensuring we all move at escape velocity toward a singular, stellar product experience. I believe great design goes beyond aesthetics - it solves real business problems. By bridging complex engineering constraints with intuitive user needs, I deliver seamless solutions that reduce friction, improve accessibility, and drive measurable growth.
+                I see complex enterprise products as systems, not screens - every workflow, permission model, and edge case has to hold together as the product scales. That&apos;s the lens I bring to every engagement: understand the operational reality first, then design the interface that fits it.
               </p>
               <p>
-                Now, I&apos;m ready for my next cosmic adventure—exploring new galaxies of creativity, co-creating bold ideas, and turning ambitious design dreams into reality. Whether it&apos;s crafting scalable enterprise systems or pioneering <span className="bg-gradient-to-r from-[#FF451A] to-[#FF8A00] bg-clip-text text-transparent font-medium">AI-driven experiences</span>, I am always looking to push the boundaries of what&apos;s possible on the next frontier.
+                I believe great design solves real business problems before it solves visual ones. By bridging engineering constraints with user needs, I aim to reduce friction, improve accessibility, and support measurable business outcomes - not just ship polished screens.
+              </p>
+              <p>
+                I&apos;m currently open to design leadership roles and select 0-to-1 engagements - particularly in regulated or operationally complex industries where design has to earn trust with both users and stakeholders.
               </p>
             </div>
             
@@ -1461,15 +1446,15 @@ export function Toolkit() {
 const QUOTES = [
   {
     q: "Amit is the rare designer who improves the product roadmap, not just the pixels. He earned engineering trust in a week. During our time working together, he consistently demonstrated an incredible ability to bridge the gap between high-level business strategy and granular user interface details. His approach to design systems completely transformed our development speed, allowing us to ship features 30% faster without sacrificing visual quality. He doesn't just ask 'what should this look like?', he asks 'what problem are we actually trying to solve?' which fundamentally shifts how the entire product team operates. Highly recommended.",
-    n: "VP Product, Aviation SaaS",
+    n: "VP Product, Aviation SaaS (client details withheld under NDA)",
   },
   {
     q: "I've had the absolute pleasure of working closely with Amit across two different companies now, first at our previous agency and now in our current enterprise role. As an app developer, it is incredibly rare to find a UI/UX designer who so deeply understands the technical constraints and engineering reality of shipping mobile and web applications. We delivered several complex, high-stakes projects together from scratch. Amit's design handoffs are flawless—his Figma files, component libraries, and interactive prototypes leave absolutely zero ambiguity for the dev team. He's not just a brilliant creative mind; he is a true partner to engineering who makes everyone around him build better software.",
-    n: "Harshit Darji — App Developer",
+    n: "Harshit Darji — App Developer, ekZero",
   },
   {
     q: "He turned three years of workflow debt into a coherent system our teams actually use. It's the most consequential design work we've shipped in recent memory. Amit possesses this unique editorial eye that brings elegance to even the most chaotic, data-heavy enterprise dashboards. When he took over the core clinical workflows, he didn't just re-skin the UI; he conducted deep behavioral research with our operators and fundamentally reimagined how the information architecture should flow. The result was a platform that not only looks beautiful but drastically reduces cognitive load for our users. He is a phenomenal senior talent.",
-    n: "Head of Design, Healthcare Platform",
+    n: "Client, Healthcare Platform (client details withheld under NDA)",
   },
 ];
 
