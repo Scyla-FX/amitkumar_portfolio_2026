@@ -541,7 +541,7 @@ function CredinCaseStudy() {
         <section className="px-4 md:px-8 lg:px-[120px] py-10 md:py-16 bg-surface/30">
           <SectionHeader eyebrow="10 · CAPABILITIES DEMONSTRATED" title="Skills & Methods" />
           <div className="w-full text-base md:text-[17px] leading-[1.8] text-ink-soft/90 font-light mb-8">
-            <p>Keyword-relevant capabilities this project demonstrates end-to-end — useful for ATS parsing and recruiter scanning.</p>
+            <p>Capabilities this project put into practice, end to end.</p>
           </div>
           
           <div className="flex flex-wrap gap-2 mb-8">

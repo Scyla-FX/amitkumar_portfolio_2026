@@ -484,18 +484,23 @@ function CaseStudyDetail() {
         <section id="impact" className="px-4 md:px-8 lg:px-[120px] py-10 md:py-16">
           <SectionHeader eyebrow="09 · RESULTS" title="Outcomes & Business Impact" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {[
-              { m: "Accelerated", l: "Procurement decision time", ph: true },
-              { m: "Reduced", l: "Maintenance scheduling delays", ph: true },
-              { m: "Centralized", l: "Compliance documentation across all modules", ph: false },
-              { m: "Reduced", l: "Context switching across procurement, engineering & compliance", ph: false }
-            ].map((o, i) => (
-              <div key={i} className="bg-surface border border-line rounded-2xl p-8 flex flex-col justify-center">
-                <span className="font-mono text-xs font-semibold text-accent tracking-[0.1em] mb-3 block uppercase">{o.m}</span>
-                <div className="text-sm text-ink-soft/90 font-medium leading-relaxed">{o.l}</div>
-              </div>
-            ))}
+          <div className="w-full text-base md:text-[17px] leading-[1.8] text-ink-soft/90 font-light space-y-6 mb-8">
+            <p>
+              <strong className="text-ink font-medium font-display block mb-1">From 5 disconnected tools to 1 unified record.</strong> 
+              Procurement, MRO, compliance, and executive reporting now read from a single aircraft entity instead of five separate systems - eliminating the re-entry and version-mismatch issues that caused delays under the old workflow.
+            </p>
+            <p>
+              <strong className="text-ink font-medium font-display block mb-1">Compliance-ready by default, not by request.</strong> 
+              Audit documentation is centralized and traceable at the point of entry, replacing a process that previously required manual compilation across paper and email.
+            </p>
+            <p>
+              <strong className="text-ink font-medium font-display block mb-1">One system, nine user types.</strong> 
+              The role-based entry model meant procurement managers, MRO engineers, compliance officers, and executives could each get the view their job required without maintaining nine separate interfaces.
+            </p>
+            <p>
+              <strong className="text-ink font-medium font-display block mb-1">Built to extend.</strong> 
+              The entity-based IA (aircraft &rarr; engine &rarr; APU &rarr; landing gear &rarr; component) was designed so future asset types can be added without a structural redesign - a direct investment in long-term platform scalability over short-term speed.
+            </p>
           </div>
           
 
@@ -523,7 +528,7 @@ function CaseStudyDetail() {
           <SectionHeader 
             eyebrow="10 · CAPABILITIES DEMONSTRATED" 
             title="Skills & Methods" 
-            subtitle="Keyword-relevant capabilities this project demonstrates end-to-end — useful for ATS parsing and recruiter scanning."
+            subtitle="Capabilities this project put into practice, end to end."
           />
           
           <div className="flex flex-wrap gap-3 mb-12">

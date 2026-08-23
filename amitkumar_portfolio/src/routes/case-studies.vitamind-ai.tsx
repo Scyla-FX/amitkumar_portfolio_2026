@@ -468,7 +468,7 @@ function VitaMindCaseStudy() {
           <SectionHeader 
             eyebrow="10 · CAPABILITIES DEMONSTRATED" 
             title="Skills & Methods" 
-            subtitle="Keyword-relevant capabilities this project demonstrates end-to-end — useful for ATS parsing and recruiter scanning."
+            subtitle="Capabilities this project put into practice, end to end."
           />
           
           <div className="flex flex-wrap gap-2.5 mb-10">
