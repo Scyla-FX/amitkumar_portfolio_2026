@@ -347,7 +347,7 @@ function CredinCaseStudy() {
               { id: 19, screen: "Credit Score Tracker", purpose: "Score trend over time, tips to improve" },
               { id: 20, screen: "Profile & Settings", purpose: "Account management, theme switch" },
             ].map((step) => (
-              <div key={step.id} className="p-5 border border-line bg-surface/50 rounded-xl hover:bg-surface transition-colors group">
+              <div key={step.id} className="p-5 border border-line bg-surface/50 rounded-xl hover:bg-surface transition-colors group h-full flex flex-col">
                 <div className="flex items-start gap-3 mb-3">
                   <span className="flex items-center justify-center w-6 h-6 shrink-0 rounded-full bg-teal-500/10 text-teal-600 dark:text-teal-400 text-[10px] font-mono font-bold tracking-wider group-hover:bg-teal-500/20 transition-colors">
                     {step.id.toString().padStart(2, '0')}
@@ -359,7 +359,7 @@ function CredinCaseStudy() {
             ))}
           </div>
 
-          <div className="w-full mt-16 flex items-center justify-center relative group">
+          <div className="w-full mt-16 flex items-center justify-center relative group overflow-hidden rounded-[2rem]">
             <img src="/appscreens.png" alt="Credin User Flows and Screens" className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.02]" />
           </div>
         </section>
