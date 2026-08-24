@@ -1193,8 +1193,8 @@ export function Process() {
 const CORE_TIMELINE = [
   {
     y: "Jun 2024 — Present",
-    r: "Product Designer",
-    c: "AV DEVS Solutions",
+    r: "Product Designer / UX Designer",
+    c: "AV DEVS Solutions Pvt. Ltd.",
     b: [
       "Own end-to-end product design for mobile and web platforms across aviation, healthcare, and HR tech clients.",
       "Built and maintain a shared design system used across 3+ client products, cutting design-to-dev handoff time significantly.",
@@ -1204,7 +1204,7 @@ const CORE_TIMELINE = [
   {
     y: "Apr 2023 — Jul 2024",
     r: "Senior UX Designer",
-    c: "ekZero",
+    c: "ekZero Enterprise Software Services Pvt Ltd.",
     b: [
       "Led design for core product flows, owning decisions from early concept through final UI in Figma.",
       "Delivered detailed specs and interactive prototypes that reduced development revision cycles across multiple product releases.",
