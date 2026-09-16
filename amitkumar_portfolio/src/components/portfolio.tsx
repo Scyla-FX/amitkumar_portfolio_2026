@@ -1202,7 +1202,7 @@ const CORE_TIMELINE = [
     ],
   },
   {
-    y: "Apr 2023 — Jul 2024",
+    y: "Apr 2023 — Jun 2024",
     r: "Senior UX Designer",
     c: "ekZero Enterprise Software Services Pvt Ltd.",
     b: [
