@@ -635,6 +635,24 @@ export function Hero() {
                 <p className="text-[17px] text-white/80 leading-relaxed font-light">
                   9+ years turning ambiguous workflows into scalable products and design systems across healthcare, aviation and enterprise software. I prototype with AI in days, so ideas are tested with real users before they’re built.
                 </p>
+
+                <div className="flex flex-wrap items-center gap-4 mt-8">
+                  <Link
+                    to="/case-study"
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-white text-[#0a0a0a] font-medium text-sm transition-all duration-300 hover:bg-white/90 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                  >
+                    View case studies
+                  </Link>
+
+                  <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium text-sm backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                  >
+                    Download resume
+                  </a>
+                </div>
               </div>
               
               {/* Right Bottom */}
@@ -701,21 +719,18 @@ export function AboutMe() {
         <div className="flex flex-col gap-10 md:gap-16">
           <div className="w-full">
             <h3 className="text-3xl font-medium leading-[1.25] tracking-tight text-ink md:text-4xl lg:text-5xl">
-              I design products for forward-thinking companies. The result - products that scale, and impact that lasts.
+              I design products for complex, regulated industries, and use AI to get to the right answer faster.
             </h3>
 
             <div className="mt-10 md:mt-16 space-y-6 text-base leading-relaxed text-ink-soft md:text-[1.1rem]">
               <p>
-                I&apos;m <span className="text-ink font-medium">Amitkumar Tadvi</span> - a Senior Product Designer with 9+ years of experience leading end-to-end UX strategy and user-centered design for enterprise SaaS products. I specialize in turning ambiguous, 0-to-1 requirements into scalable design systems and data-informed interfaces that cross-functional teams - product, engineering, and business - actually adopt. My work spans aviation, healthcare, HR tech, and advertising, with deep experience in B2B SaaS workflows, usability testing, and accessible design.
+                I&apos;m <span className="text-ink font-medium">Amitkumar Tadvi</span>, a Product Designer with 9+ years of experience designing enterprise SaaS, mobile and web products across healthcare, aviation, HR tech and fintech. I turn ambiguous, zero-to-one requirements into scalable design systems and clear workflows that product, engineering and business teams actually adopt.
               </p>
               <p>
-                I see complex enterprise products as systems, not screens - every workflow, permission model, and edge case has to hold together as the product scales. That&apos;s the lens I bring to every engagement: understand the operational reality first, then design the interface that fits it.
+                I treat complex products as systems, not screens. Every workflow, permission model and edge case has to hold together as the product grows. I start with the operational reality, then design the interface that fits it, working closely with engineers so decisions survive handoff.
               </p>
               <p>
-                I believe great design solves real business problems before it solves visual ones. By bridging engineering constraints with user needs, I aim to reduce friction, improve accessibility, and support measurable business outcomes - not just ship polished screens.
-              </p>
-              <p>
-                I&apos;m currently open to design leadership roles and select 0-to-1 engagements - particularly in regulated or operationally complex industries where design has to earn trust with both users and stakeholders.
+                I use AI throughout my process, from research synthesis to working prototypes, so ideas can be tested with real users in days instead of weeks. I also know where AI falls short, and I design the human-in-the-loop moments that build trust. I&apos;m currently open to Product Designer roles and select zero-to-one engagements, especially in healthcare, aviation and other operationally complex industries.
               </p>
             </div>
             
@@ -726,7 +741,14 @@ export function AboutMe() {
                 <div className="flex-1">
                   <h4 className="font-display text-lg text-ink mb-4">Core Focus</h4>
                   <div className="flex flex-wrap gap-2">
-                    {["Enterprise SaaS", "AI-Driven Design", "B2B Workflows", "Complex Dashboards", "0→1 Product Design"].map(skill => (
+                    {[
+                      "Enterprise SaaS",
+                      "AI-Enabled Product Design",
+                      "Design Systems",
+                      "B2B Workflows",
+                      "Complex Dashboards",
+                      "0→1 Product Design",
+                    ].map(skill => (
                       <span key={skill} className="px-3 py-1.5 bg-background border border-line rounded-full text-xs font-medium text-ink-soft">{skill}</span>
                     ))}
                   </div>
@@ -735,7 +757,16 @@ export function AboutMe() {
                 <div className="flex-1">
                   <h4 className="font-display text-lg text-ink mb-4">Design Toolkit</h4>
                   <div className="flex flex-wrap gap-2">
-                    {["Figma", "Design Systems", "Protopie", "UX Strategy", "User Research", "Wireframing", "Interaction Design"].map(tool => (
+                    {[
+                      "Figma",
+                      "Design Systems",
+                      "Prototyping",
+                      "User Research",
+                      "Usability Testing",
+                      "Interaction Design",
+                      "Accessibility",
+                      "AI-Assisted Prototyping",
+                    ].map(tool => (
                       <span key={tool} className="px-3 py-1.5 bg-background border border-line rounded-full text-xs font-medium text-ink-soft">{tool}</span>
                     ))}
                   </div>
@@ -743,7 +774,7 @@ export function AboutMe() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 mt-2">
-                <a href="#" className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 text-sm font-medium text-background transition-colors hover:bg-accent w-full sm:w-auto text-center">
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-8 py-4 text-sm font-medium text-background transition-colors hover:bg-accent w-full sm:w-auto text-center">
                   Download Resume
                 </a>
                 <a href="https://www.linkedin.com/in/amitinnovatesux/" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-full border border-line px-8 py-4 text-sm font-medium text-ink transition-colors hover:bg-surface w-full sm:w-auto text-center">
@@ -1097,39 +1128,33 @@ export function Capabilities() {
 const PROCESS = [
   {
     n: "01",
-    t: "Frame",
-    b: "Reframe the ask into the business outcome, the operator's job, and the constraints nobody has written down yet.",
-    d: "Stakeholder maps · Jobs-to-be-done · Success metrics",
+    t: "Discover",
+    b: "Interview stakeholders and users, then use AI to summarize notes and surface recurring patterns faster.",
   },
   {
     n: "02",
-    t: "Discover",
-    b: "Field research with the people doing the work. Journey maps and workflow analysis grounded in real telemetry.",
-    d: "Interviews · Shadowing · Workflow instrumentation",
+    t: "Define",
+    b: "Frame the real problem, map workflows, and set clear success metrics before any screens exist.",
   },
   {
     n: "03",
-    t: "Architect",
-    b: "Information architecture, state models, and interaction primitives. Decisions made before pixels.",
-    d: "IA · State charts · Content model",
+    t: "Explore",
+    b: "Sketch flows and layouts, use AI for quick variations, then choose using sound design judgment.",
   },
   {
     n: "04",
-    t: "Design",
-    b: "Systemic UI with tokens, primitives, and motion. Every screen composed, not authored.",
-    d: "Design system · High-fidelity flows · Motion spec",
+    t: "Prototype",
+    b: "Build interactive Figma and coded prototypes using AI tools so ideas get tested within days.",
   },
   {
     n: "05",
-    t: "Ship",
-    b: "Paired with engineering. Accessibility, edge cases and empty states specified in the same doc as the happy path.",
-    d: "Handoff · A11y · Instrumentation",
+    t: "Validate",
+    b: "Run usability tests with real users, then refine designs using evidence, not opinions or assumptions.",
   },
   {
     n: "06",
-    t: "Compound",
-    b: "Post-launch review against north-star metrics. Feed learnings back into the system so the next release is faster.",
-    d: "Analytics · Retros · System iteration",
+    t: "Deliver",
+    b: "Hand off specs, tokens, and documentation to developers, then closely support build and post-launch iteration.",
   },
 ];
 
@@ -1151,10 +1176,9 @@ export function Process() {
       </div>
 
       <div className="w-full">
-        <h2 className="font-display text-4xl leading-[1.2] text-ink md:text-5xl">
-          A repeatable path
-          <br />
-          <span className="text-ink-soft">from ambiguity to release.</span>
+        <h2 className="font-display text-4xl leading-[1.2] text-ink md:text-5xl max-w-3xl">
+          How I move from ambiguity <br className="hidden sm:block" />
+          <span className="text-ink-soft">to shipped product.</span>
         </h2>
       </div>
 
@@ -1175,10 +1199,12 @@ export function Process() {
               <span className="h-px w-12 bg-line group-hover:bg-accent/50 transition-colors" />
             </div>
             <h3 className="font-display text-3xl text-ink mb-2">{step.t}</h3>
-            <p className="text-sm leading-loose text-ink-soft mb-2">{step.b}</p>
-            <div className="mt-auto font-mono text-[10px] uppercase tracking-[0.2em] text-accent pt-2">
-              {step.d}
-            </div>
+            <p className="text-sm leading-relaxed text-ink-soft">{step.b}</p>
+            {step.d && (
+              <div className="mt-auto font-mono text-[10px] uppercase tracking-[0.2em] text-accent pt-4">
+                {step.d}
+              </div>
+            )}
           </motion.div>
         ))}
       </div>
@@ -1704,39 +1730,36 @@ export function Expertise() {
   const services = [
     {
       num: "01",
-      title: "UI/UX Design",
-      desc: "We design intuitive, accessible interfaces that improve usability, guide users, and increase engagement.",
-      tags: ["0-to-1 Design", "User Research", "UX Flows", "Accessibility", "Prototyping"],
-      img: "/expertise-uiux.jpg"
+      label: "Design",
+      title: "Enterprise Product Design",
+      desc: "End-to-end design for web and mobile products, from early concept to final UI and handoff.",
+      tags: ["0→1 Design", "UX Flows", "Accessibility"],
+      img: "/Design.png",
     },
     {
       num: "02",
-      title: "Design Systems",
-      desc: "We build scalable design systems that ensure visual consistency, speed up execution, and maintain brand integrity.",
-      tags: ["Component Libraries", "Design Tokens", "Style Guides", "Dev Handoff", "Auto Layout"],
-      img: "/expertise-designsystem.jpg"
+      label: "Systems",
+      title: "Design System Development",
+      desc: "Reusable tokens and components that keep web and mobile products consistent and speed up handoff.",
+      tags: ["Design Tokens", "Component Libraries", "Documentation"],
+      img: "/Systems.png",
     },
     {
       num: "03",
-      title: "Brand Identity",
-      desc: "We create distinct brand identities that communicate purpose, build trust, and stand out in enterprise markets.",
-      tags: ["Visual Identity", "Brand Guidelines", "Typography Systems", "Brand Voice", "Stakeholder Buy-In"],
-      img: "/expertise-brand-identity.jpg"
+      label: "Research",
+      title: "Research and Testing",
+      desc: "Interviews, usability testing and workflow analysis with users to guide decisions before and after launch.",
+      tags: ["User Research", "Usability Testing", "Journey Mapping"],
+      img: "/Research.png",
     },
     {
       num: "04",
-      title: "Growth Design",
-      desc: "We design with data at the core, crafting experiences that improve conversion and retention.",
-      tags: ["Data-Informed Design", "A/B Testing", "Funnel Optimization", "Journey Mapping", "Conversion UX"],
-      img: "/expertise-growthdesign.jpg"
+      label: "Prototyping",
+      title: "AI-Assisted Rapid Prototyping",
+      desc: "Using AI tools to turn ideas into testable prototypes quickly, then validating them with users.",
+      tags: ["Figma", "AI Tools", "Interactive Prototypes"],
+      img: "/Prototyping.png",
     },
-    {
-      num: "05",
-      title: "Content Design",
-      desc: "We craft clear, purposeful content that guides users and strengthens the product experience.",
-      tags: ["UX Writing", "Microcopy", "Information Architecture", "Content Hierarchy", "Design Critique"],
-      img: "/expertise-content-design.jpg"
-    }
   ];
 
   return (
@@ -1757,15 +1780,17 @@ export function Expertise() {
         </div>
 
         {/* Tagline */}
-        <div className="w-full mb-6 md:mb-10">
-          <h2 className="font-display text-4xl leading-[1.2] text-ink md:text-5xl">
-            A strategic partner,<br />
-            <span className="text-ink-soft">designing systems that scale.</span>
+        <div className="w-full mb-8 md:mb-12">
+          <h2 className="font-display text-4xl leading-[1.2] text-ink md:text-5xl max-w-3xl">
+            A product design partner for systems that scale.
           </h2>
+          <p className="mt-4 text-base md:text-lg text-ink-soft font-light max-w-2xl">
+            Four areas where I help teams move from ambiguity to shipped, usable products.
+          </p>
         </div>
 
         {/* Accordion Container */}
-        <div className="flex h-auto w-full flex-col gap-[1px] bg-line overflow-hidden rounded-2xl border border-line md:h-[600px] md:flex-row">
+        <div className="flex h-auto w-full flex-col gap-[1px] bg-line overflow-hidden rounded-2xl border border-line md:h-[620px] md:flex-row">
           {services.map((s, i) => {
             const isActive = active === i;
             return (
@@ -1780,84 +1805,74 @@ export function Expertise() {
                 {/* Panel Header */}
                 <div className="flex shrink-0 items-center justify-between border-b border-line p-4 md:p-6">
                   <span className="font-mono text-xs text-ink-soft uppercase tracking-widest">
-                    Service
+                    {s.label}
                   </span>
                   <span className="font-mono text-xs text-ink-soft">({s.num})</span>
                 </div>
 
                 {/* Content Area */}
                 <div className="relative flex flex-1 flex-col overflow-hidden">
-                  {/* Fading Content (Image, Description, Tags) */}
-                  <AnimatePresence>
-                    {isActive && (
+                  <AnimatePresence mode="wait">
+                    {isActive ? (
                       <motion.div
+                        key={`expanded-${s.num}`}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="flex flex-1 flex-col p-4 md:p-6"
+                        transition={{ duration: 0.4 }}
+                        className="flex flex-1 flex-col p-6 md:p-8 justify-between"
                       >
-                        <div className="relative mb-6 flex-1 overflow-hidden rounded-xl bg-surface min-h-[160px] md:min-h-[200px]">
+                        <div className="relative mb-6 flex-1 overflow-hidden rounded-xl bg-surface min-h-[160px] md:min-h-[220px]">
                           <img
                             src={s.img}
                             alt={s.title}
                             className="absolute inset-0 h-full w-full object-cover"
                           />
                         </div>
-                        <div className="flex-shrink-0 pb-10 md:pb-12">
-                          <p className="mb-6 max-w-xl text-sm leading-relaxed text-ink-soft">
+                        <div className="flex-shrink-0">
+                          <p className="mb-4 max-w-xl text-sm leading-relaxed text-ink-soft">
                             {s.desc}
                           </p>
-                          <div className="flex flex-wrap gap-2">
+                          <div className="flex flex-wrap gap-2 mb-6">
                             {s.tags.map((tag) => (
                               <span
                                 key={tag}
-                                className="rounded border border-line px-3 py-1.5 text-xs text-ink-soft"
+                                className="rounded border border-line px-3 py-1.5 text-xs text-ink-soft bg-surface/50"
                               >
                                 {tag}
                               </span>
                             ))}
                           </div>
+                          <h3 className="text-2xl lg:text-3xl font-semibold text-ink tracking-tight">
+                            {s.title}
+                          </h3>
+                        </div>
+                      </motion.div>
+                    ) : (
+                      <motion.div
+                        key={`collapsed-${s.num}`}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="flex-1 flex flex-col justify-end items-center pb-8 w-full"
+                      >
+                        {/* Desktop Collapsed Vertical Title */}
+                        <div className="hidden md:flex flex-col items-center justify-end w-full flex-1">
+                          <span className="text-lg lg:text-xl font-semibold tracking-tight text-ink-soft group-hover:text-ink transition-colors whitespace-nowrap [writing-mode:vertical-rl] rotate-180 select-none">
+                            {s.title}
+                          </span>
+                        </div>
+
+                        {/* Mobile Collapsed Title */}
+                        <div className="flex w-full items-center p-4 md:hidden">
+                          <span className="text-lg font-semibold text-ink-soft transition-colors group-hover:text-ink">
+                            {s.title}
+                          </span>
                         </div>
                       </motion.div>
                     )}
                   </AnimatePresence>
-
-                  {/* Desktop Title (Rotates and moves) */}
-                  <motion.h3
-                    layout
-                    initial={false}
-                    animate={{ rotate: isActive ? 0 : -90 }}
-                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className={`hidden md:block absolute whitespace-nowrap text-3xl font-semibold tracking-tight transition-colors z-10 origin-center ${isActive
-                      ? "bottom-6 left-6 text-ink"
-                      : "bottom-1/2 left-1/2 text-ink-soft group-hover:text-ink"
-                      }`}
-                    style={
-                      isActive
-                        ? { x: 0, y: 0 }
-                        : { x: "-50%", y: "50%" }
-                    }
-                  >
-                    {s.title}
-                  </motion.h3>
-
-                  {/* Mobile Collapsed Title */}
-                  {!isActive && (
-                    <div className="flex flex-1 items-center p-4 md:hidden">
-                      <span className="text-xl font-semibold text-ink-soft transition-colors group-hover:text-ink">
-                        {s.title}
-                      </span>
-                    </div>
-                  )}
-                  {/* Mobile Expanded Title */}
-                  {isActive && (
-                    <div className="absolute bottom-4 left-4 z-10 md:hidden">
-                      <span className="text-xl font-semibold text-ink">
-                        {s.title}
-                      </span>
-                    </div>
-                  )}
                 </div>
               </motion.div>
             );
