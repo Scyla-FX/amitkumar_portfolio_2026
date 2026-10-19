@@ -600,14 +600,14 @@ export function Hero() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E8A855] opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#E8A855]"></span>
                   </div>
-                  <span className="text-xs font-mono uppercase tracking-[0.15em] text-white/70">Senior Product Designer</span>
+                  <span className="text-xs font-mono uppercase tracking-[0.15em] text-white/70">Senior Product Designer · AI-Enabled Products</span>
                 </motion.div>
                 
                 <motion.h1 
                   custom={1} variants={fadeUp} initial="hidden" animate="show"
                   className="text-[44px] sm:text-[56px] md:text-[64px] font-bold leading-[1.4] tracking-tight mb-8"
                 >
-                  I design digital products with <span className="text-[#E8A855] italic font-serif">intent.</span>
+                  I design the systems behind AI-powered products.
                 </motion.h1>
               </div>
 
@@ -631,9 +631,9 @@ export function Hero() {
             {/* Bottom Row */}
             <motion.div custom={3} variants={fadeUp} initial="hidden" animate="show" className="flex flex-col md:flex-row items-start md:items-end justify-between mt-16 md:mt-20 gap-10">
               {/* Left Bottom */}
-              <div className="max-w-[450px]">
+              <div className="max-w-[540px]">
                 <p className="text-[17px] text-white/80 leading-relaxed font-light">
-                  Partnering with founders and engineering teams to turn complex, ambiguous requirements into scalable, accessible user experiences.
+                  9+ years turning ambiguous workflows into scalable products and design systems across healthcare, aviation and enterprise software. I prototype with AI in days, so ideas are tested with real users before they’re built.
                 </p>
               </div>
               
