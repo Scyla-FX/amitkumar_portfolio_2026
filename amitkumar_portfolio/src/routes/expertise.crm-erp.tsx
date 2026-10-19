@@ -170,57 +170,57 @@ function CrmErpPage() {
                 title: "Coral Shift Manager",
                 desc: "A comprehensive staff scheduling and shift management tool.",
                 tags: ["HR", "Scheduling"],
-                image: "/portfolio-mockup-1.jpg",
-                fullImage: "/portfolio-unframed-1.png"
+                image: "/portfolio-mockup-2.jpg",
+                fullImage: "/portfolio-unframed-8.png"
               },
               {
                 title: "Team Sync Chat",
                 desc: "Real-time communication platform with integrated file sharing.",
                 tags: ["Collaboration", "SaaS"],
-                image: "/portfolio-mockup-2.jpg",
-                fullImage: "/portfolio-unframed-2.png"
+                image: "/portfolio-mockup-4.jpg",
+                fullImage: "/portfolio-unframed-7.png"
               },
               {
                 title: "BeatBay Streaming",
                 desc: "Music streaming interface with personalized playlists and radio.",
                 tags: ["Media", "B2C"],
                 image: "/portfolio-mockup-3.jpg",
-                fullImage: "/portfolio-unframed-3.png"
+                fullImage: "/portfolio-unframed-6.png"
               },
               {
                 title: "E-Commerce Admin",
                 desc: "Inventory and product management dashboard for retail.",
                 tags: ["Retail", "Inventory"],
-                image: "/portfolio-mockup-4.jpg",
-                fullImage: "/portfolio-unframed-4.png"
+                image: "/portfolio-mockup-1.jpg",
+                fullImage: "/portfolio-unframed-5.png"
               },
               {
                 title: "Finance Dashboard",
                 desc: "Personal wealth tracking, card management, and transfers.",
                 tags: ["FinTech", "Banking"],
                 image: "/portfolio-mockup-5.jpg",
-                fullImage: "/portfolio-unframed-5.png"
+                fullImage: "/portfolio-unframed-3.png"
               },
               {
                 title: "Coffee POS System",
                 desc: "Point of sale interface for quick service restaurants.",
                 tags: ["POS", "Food & Beverage"],
-                image: "/portfolio-mockup-6.jpg",
-                fullImage: "/portfolio-unframed-6.png"
+                image: "/portfolio-mockup-8.jpg",
+                fullImage: "/portfolio-unframed-1.png"
               },
               {
                 title: "E-Learning Portal",
                 desc: "Video course platform with assignments and progress tracking.",
                 tags: ["EdTech", "Platform"],
-                image: "/portfolio-mockup-7.jpg",
-                fullImage: "/portfolio-unframed-7.png"
+                image: "/portfolio-mockup-6.jpg",
+                fullImage: "/portfolio-unframed-2.png"
               },
               {
                 title: "Property Manager",
                 desc: "Real estate dashboard tracking sales, maintenance, and revenue.",
                 tags: ["Real Estate", "Analytics"],
-                image: "/portfolio-mockup-8.jpg",
-                fullImage: "/portfolio-unframed-8.png"
+                image: "/portfolio-mockup-7.jpg",
+                fullImage: "/portfolio-unframed-4.png"
               }
             ].map((project, i) => (
               <div 
@@ -303,3 +303,4 @@ function CrmErpPage() {
     </>
   );
 }
+
