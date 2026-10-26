@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav, Footer, Cursor } from "@/components/portfolio";
 import { motion } from "framer-motion";
-import { Layers } from "lucide-react"; // fallback for company logo
 
 export const Route = createFileRoute("/case-study")({
   component: CaseStudyIndex,
@@ -10,6 +9,33 @@ export const Route = createFileRoute("/case-study")({
 const CASE_STUDIES = [
   {
     n: "01",
+    workType: "Concept", // "Client work" | "Concept" | "Personal project"
+    badge: "AI-Driven",
+    company: "VitaMind AI",
+    title: "AI Cardiac Risk & Longevity Platform",
+    subtitle: "A privacy-first, region-aware health intelligence platform turning raw vitals into predictive care.",
+    desc: "I designed VitaMind AI as a single connected system across web and mobile. It replaces disconnected tracking apps and static lab reports with one continuously learning health record, with AI insights designed around trust, risk severity and clear next steps.",
+    img: "/vitamind-featured.png",
+    authorImg: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200",
+    authorName: "Amit Tadvi",
+    authorRole: "Lead Product Designer",
+    approach: [
+      { title: "Stakeholder & Clinical", desc: "Cross-functional sessions with advisors and compliance leads" },
+      { title: "Regulatory Mapping", desc: "HIPAA and regional privacy audits for data architecture" },
+      { title: "Information Architecture", desc: "Single health record bridging vitals, risk, and care plans" },
+      { title: "UI System Design", desc: "Scalable, calm interface adapting to risk severity" }
+    ],
+    results: [
+      { stat: "HIPAA", label: "Compliant" },
+      { stat: "0→1", label: "Product Lifecycle" },
+      { stat: "AI", label: "Risk Engine" }
+    ],
+    link: "/case-studies/vitamind-ai"
+  },
+  {
+    n: "02",
+    workType: "Client work", // "Client work" | "Concept" | "Personal project"
+    badge: null,
     company: "AeroSphere",
     title: "Aviation Asset Management Ecosystem",
     subtitle: "Unifying aircraft trading, maintenance, inventory, and compliance into one enterprise platform.",
@@ -32,34 +58,13 @@ const CASE_STUDIES = [
     link: "/case-studies/aerosphere"
   },
   {
-    n: "02",
-    company: "VitaMind AI",
-    title: "AI Cardiac Risk & Longevity Platform",
-    subtitle: "A HIPAA-compliant, region-aware health intelligence platform turning raw vitals into predictive care.",
-    desc: "Built as a single connected system across web and mobile, VitaMind AI replaces disconnected tracking apps and static lab reports with one continuously-learning health record — predicting risk before symptoms appear and providing an AI-guided path to longevity.",
-    img: "/vitamind-featured.png",
-    authorImg: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200",
-    authorName: "Amit Tadvi",
-    authorRole: "Lead Product Designer",
-    approach: [
-      { title: "Stakeholder & Clinical", desc: "Cross-functional sessions with advisors and compliance leads" },
-      { title: "Regulatory Mapping", desc: "HIPAA and regional privacy audits for data architecture" },
-      { title: "Information Architecture", desc: "Single health record bridging vitals, risk, and care plans" },
-      { title: "UI System Design", desc: "Scalable, calm interface adapting to risk severity" }
-    ],
-    results: [
-      { stat: "HIPAA", label: "Compliant" },
-      { stat: "0→1", label: "Product Lifecycle" },
-      { stat: "AI", label: "Risk Engine" }
-    ],
-    link: "/case-studies/vitamind-ai"
-  },
-  {
     n: "03",
+    workType: "Client work", // "Client work" | "Concept" | "Personal project"
+    badge: null,
     company: "Credin",
     title: "Unified Credit & Leasing App",
     subtitle: "From application to disbursement in one seamless journey.",
-    desc: "A single mobile lending platform that lets individuals and businesses apply for personal loans, business capital, or vehicle and machinery leasing — and track every rupee from application to disbursement in one continuous, premium-feeling journey.",
+    desc: "A single mobile lending platform where individuals and businesses apply for personal loans, business capital, or vehicle and machinery leasing, and track every rupee from application to disbursement in one continuous journey.",
     img: "/credin-featured.png",
     authorImg: "/profile.png",
     authorName: "Amit Tadvi",
@@ -88,7 +93,7 @@ function CaseStudyIndex() {
         
         {/* Page Header */}
         <section className="pt-32 md:pt-40 pb-20 px-4 md:px-8 lg:px-[120px]">
-          <div className="w-full w-full">
+          <div className="w-full">
             <div className="max-w-4xl">
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}>
                 <div className="font-mono text-xs md:text-sm font-semibold uppercase tracking-[0.24em] text-muted-foreground mb-6 flex flex-wrap items-center gap-2">
@@ -99,8 +104,8 @@ function CaseStudyIndex() {
                 <h1 className="font-display text-5xl md:text-7xl leading-[1.1] text-ink mb-8">
                   Featured Case Studies
                 </h1>
-                <p className="text-xl text-ink-soft max-w-2xl">
-                  Explore how we solve complex problems through strategic design, improving usability, and driving measurable business growth.
+                <p className="text-xl text-ink/85 max-w-2xl leading-relaxed">
+                  Three deep dives into how I design complex products, from research to a shipped, usable experience, including AI-driven healthcare.
                 </p>
               </motion.div>
             </div>
@@ -117,7 +122,7 @@ function CaseStudyIndex() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-10% 0px" }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="w-full w-full"
+                className="w-full"
               >
                 <Link
                   to={c.link}
@@ -128,8 +133,7 @@ function CaseStudyIndex() {
                     {/* Left Column */}
                     <div className="md:col-span-6 flex flex-col justify-between">
                       <div className="flex flex-col h-full">
-                        <div className="flex items-center gap-2 font-display text-xl font-semibold text-ink mb-8 md:mb-10">
-                          <Layers className="w-6 h-6 text-[#FF451A]" />
+                        <div className="font-display text-xl font-semibold text-ink mb-8 md:mb-10">
                           {c.company}
                         </div>
                         
@@ -137,24 +141,24 @@ function CaseStudyIndex() {
                           {c.title}
                         </h2>
                         
-                        <p className="text-xl text-ink-soft font-medium leading-snug mb-8">
+                        <p className="text-xl text-ink/90 font-medium leading-snug mb-8">
                           {c.subtitle}
                         </p>
                         
-                        <p className="text-ink-soft/90 leading-relaxed text-base mb-10">
+                        <p className="text-ink/85 leading-relaxed text-[15px] sm:text-base mb-10">
                           {c.desc}
                         </p>
                         
-                        {/* Our Approach */}
+                        {/* My Approach */}
                         <div className="bg-surface p-6 md:p-8 rounded-[2rem] border border-line/50 mb-10 mt-auto">
-                          <h3 className="font-display text-xl mb-6 text-ink">Our Approach:</h3>
+                          <h3 className="font-display text-xl mb-6 text-ink">My Approach:</h3>
                           <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-6">
                             {c.approach.map((a, idx) => (
                               <li key={idx}>
                                 <div className="font-medium text-ink text-sm flex items-center gap-2 mb-1">
                                   <span className="w-1 h-1 rounded-full bg-ink" /> {a.title}
                                 </div>
-                                <div className="text-ink-soft text-sm pl-3">{a.desc}</div>
+                                <div className="text-ink/80 text-[14px] sm:text-sm pl-3 leading-normal">{a.desc}</div>
                               </li>
                             ))}
                           </ul>
@@ -170,12 +174,24 @@ function CaseStudyIndex() {
 
                     {/* Right Column */}
                     <div className="md:col-span-6 flex flex-col">
-                      <div className="flex justify-end font-mono text-xs text-muted-foreground tracking-widest items-center gap-4 mb-8 md:mb-10">
-                        CASE <span className="h-px w-6 bg-line hidden md:block" /> ({c.n})
+                      <div className="flex flex-wrap justify-end font-mono text-xs text-muted-foreground tracking-widest items-center gap-3 mb-8 md:mb-10">
+                        {c.badge && (
+                          <span className="font-mono text-[11px] text-ink border border-line px-3 py-1 rounded-full bg-surface tracking-normal font-medium">
+                            {c.badge}
+                          </span>
+                        )}
+                        {c.workType && (
+                          <span className="font-mono text-[11px] text-muted-foreground border border-line/60 px-3 py-1 rounded-full bg-surface/50 tracking-normal">
+                            {c.workType}
+                          </span>
+                        )}
+                        <span>
+                          CASE <span className="h-px w-6 bg-line hidden md:inline-block align-middle mx-1" /> ({c.n})
+                        </span>
                       </div>
                       
                       <div className="rounded-[2rem] overflow-hidden bg-surface relative group border border-line/50 flex-1 min-h-[300px]">
-                        <img src={c.img} alt={c.title} className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 ${c.n === "03" ? "scale-[1.6] -translate-y-[150px] group-hover:scale-[1.65]" : "group-hover:scale-105"}`} />
+                        <img src={c.img} alt={c.title} className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 ${c.company === "Credin" ? "scale-[1.6] -translate-y-[150px] group-hover:scale-[1.65]" : "group-hover:scale-105"}`} />
                         <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
                       </div>
                     </div>

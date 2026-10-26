@@ -1,16 +1,135 @@
 <!DOCTYPE html>
 <html>
-<body style='background: white;'>
-  <h1>Image Mapping</h1>
-  <div style='display: flex; flex-direction: column; gap: 20px;'>
-    <div><h2>webdesign-full-1.jpg</h2><img src='webdesign-full-1.jpg' width='300'></div>
-    <div><h2>webdesign-full-2.jpg</h2><img src='webdesign-full-2.jpg' width='300'></div>
-    <div><h2>webdesign-full-3.jpg</h2><img src='webdesign-full-3.jpg' width='300'></div>
-    <div><h2>webdesign-full-4.jpg</h2><img src='webdesign-full-4.jpg' width='300'></div>
-    <div><h2>webdesign-full-5.jpg</h2><img src='webdesign-full-5.jpg' width='300'></div>
-    <div><h2>webdesign-full-6.jpg</h2><img src='webdesign-full-6.jpg' width='300'></div>
-    <div><h2>webdesign-full-7.jpg</h2><img src='webdesign-full-7.jpg' width='300'></div>
-    <div><h2>webdesign-full-8.jpg</h2><img src='webdesign-full-8.jpg' width='300'></div>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: #0c0b0a;
+      color: white;
+      font-family: sans-serif;
+      padding: 40px;
+    }
+
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .card {
+      position: relative;
+      width: 100%;
+      max-width: 1100px;
+      height: 480px;
+      border-radius: 40px;
+      overflow: hidden;
+      background: #161514;
+      padding: 50px;
+      box-sizing: border-box;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    h3 {
+      margin-top: 0;
+      color: #E8A855;
+      font-family: monospace;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid">
+    <div>
+      <h3>Option 3A: Light Effect Behind (L=0.72 & 0.65) + Overlay Image (80% opacity) + Warm ambient light on top</h3>
+      <div class="card">
+        <!-- Radial light effect behind -->
+        <div
+          style="position: absolute; inset: 0; background: radial-gradient(55% 65% at 20% 30%, oklch(0.72 0.22 48 / 0.8), transparent 70%), radial-gradient(60% 70% at 80% 70%, oklch(0.68 0.20 38 / 0.8), transparent 70%); pointer-events: none;">
+        </div>
+
+        <!-- Image with overlay at 80% -->
+        <img src="/hero_card.png"
+          style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; mix-blend-mode: overlay; opacity: 0.8;" />
+
+        <!-- Warm top light glow -->
+        <div
+          style="position: absolute; inset: 0; opacity: 0.7; background: radial-gradient(50% 60% at 20% 30%, oklch(0.70 0.18 48 / 0.5), transparent), radial-gradient(50% 60% at 80% 70%, oklch(0.65 0.16 35 / 0.5), transparent); mix-blend-mode: screen; pointer-events: none;">
+        </div>
+
+        <!-- Left text readability scrim -->
+        <div
+          style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 50%, transparent 100%); pointer-events: none;">
+        </div>
+
+        <div style="position: relative; z-index: 10; max-width: 600px;">
+          <h1 style="font-size: 48px; line-height: 1.15; font-weight: bold; margin: 0 0 16px;">I design the systems
+            behind AI-powered products.</h1>
+          <p style="font-size: 17px; color: rgba(255,255,255,0.85); line-height: 1.7;">9+ years turning ambiguous
+            workflows into scalable products across enterprise and AI software.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3>Option 3B: Enhanced Light Glow (L=0.78 & 0.72) + Screen blend for the light effect (glowing atmosphere)</h3>
+      <div class="card">
+        <!-- Image with overlay 80% -->
+        <img src="/hero_card.png"
+          style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; mix-blend-mode: overlay; opacity: 0.8;" />
+
+        <!-- Bright Screen Light Effect: illuminating both card and image -->
+        <div
+          style="position: absolute; inset: 0; background: radial-gradient(55% 65% at 20% 30%, oklch(0.78 0.22 50 / 0.9), transparent 70%), radial-gradient(65% 75% at 80% 70%, oklch(0.72 0.20 38 / 0.85), transparent 70%); mix-blend-mode: screen; pointer-events: none;">
+        </div>
+
+        <!-- Left text readability scrim -->
+        <div
+          style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 50%, transparent 100%); pointer-events: none;">
+        </div>
+
+        <div style="position: relative; z-index: 10; max-width: 600px;">
+          <h1 style="font-size: 48px; line-height: 1.15; font-weight: bold; margin: 0 0 16px;">I design the systems
+            behind AI-powered products.</h1>
+          <p style="font-size: 17px; color: rgba(255,255,255,0.85); line-height: 1.7;">9+ years turning ambiguous
+            workflows into scalable products across enterprise and AI software.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3>Option 3C: Both Behind + On Top (Maximum luminous light effect + rich image clarity)</h3>
+      <div class="card">
+        <!-- Base light effect behind -->
+        <div
+          style="position: absolute; inset: 0; background: radial-gradient(50% 60% at 20% 30%, oklch(0.72 0.20 48 / 0.7), transparent), radial-gradient(55% 65% at 80% 70%, oklch(0.68 0.18 36 / 0.7), transparent); pointer-events: none;">
+        </div>
+
+        <!-- Image with overlay 80% -->
+        <img src="/hero_card.png"
+          style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; mix-blend-mode: overlay; opacity: 0.8;" />
+
+        <!-- Screen Light Overlay -->
+        <div
+          style="position: absolute; inset: 0; background: radial-gradient(45% 55% at 20% 30%, oklch(0.80 0.22 52 / 0.65), transparent 65%), radial-gradient(55% 65% at 80% 65%, oklch(0.75 0.20 42 / 0.6), transparent 70%); mix-blend-mode: screen; pointer-events: none;">
+        </div>
+
+        <!-- Left text readability scrim -->
+        <div
+          style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 50%, transparent 100%); pointer-events: none;">
+        </div>
+
+        <div style="position: relative; z-index: 10; max-width: 600px;">
+          <h1 style="font-size: 48px; line-height: 1.15; font-weight: bold; margin: 0 0 16px;">I design the systems
+            behind AI-powered products.</h1>
+          <p style="font-size: 17px; color: rgba(255,255,255,0.85); line-height: 1.7;">9+ years turning ambiguous
+            workflows into scalable products across enterprise and AI software.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
+
 </html>

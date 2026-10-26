@@ -9,43 +9,28 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as CaseStudyRouteImport } from './routes/case-study'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ExpertiseWebDesignRouteImport } from './routes/expertise.web-design'
-import { Route as ExpertiseMobileAppRouteImport } from './routes/expertise.mobile-app'
-import { Route as ExpertiseCrmErpRouteImport } from './routes/expertise.crm-erp'
-import { Route as CaseStudiesVitamindAiRouteImport } from './routes/case-studies.vitamind-ai'
-import { Route as CaseStudiesCredinRouteImport } from './routes/case-studies.credin'
+import { Route as CaseStudyRouteImport } from './routes/case-study'
 import { Route as CaseStudiesAerosphereRouteImport } from './routes/case-studies.aerosphere'
+import { Route as CaseStudiesCredinRouteImport } from './routes/case-studies.credin'
+import { Route as CaseStudiesVitamindAiRouteImport } from './routes/case-studies.vitamind-ai'
+import { Route as ExpertiseCrmErpRouteImport } from './routes/expertise.crm-erp'
+import { Route as ExpertiseMobileAppRouteImport } from './routes/expertise.mobile-app'
+import { Route as ExpertiseWebDesignRouteImport } from './routes/expertise.web-design'
 
-const CaseStudyRoute = CaseStudyRouteImport.update({
-  id: '/case-study',
-  path: '/case-study',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ExpertiseWebDesignRoute = ExpertiseWebDesignRouteImport.update({
-  id: '/expertise/web-design',
-  path: '/expertise/web-design',
+const CaseStudyRoute = CaseStudyRouteImport.update({
+  id: '/case-study',
+  path: '/case-study',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ExpertiseMobileAppRoute = ExpertiseMobileAppRouteImport.update({
-  id: '/expertise/mobile-app',
-  path: '/expertise/mobile-app',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ExpertiseCrmErpRoute = ExpertiseCrmErpRouteImport.update({
-  id: '/expertise/crm-erp',
-  path: '/expertise/crm-erp',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CaseStudiesVitamindAiRoute = CaseStudiesVitamindAiRouteImport.update({
-  id: '/case-studies/vitamind-ai',
-  path: '/case-studies/vitamind-ai',
+const CaseStudiesAerosphereRoute = CaseStudiesAerosphereRouteImport.update({
+  id: '/case-studies/aerosphere',
+  path: '/case-studies/aerosphere',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CaseStudiesCredinRoute = CaseStudiesCredinRouteImport.update({
@@ -53,9 +38,24 @@ const CaseStudiesCredinRoute = CaseStudiesCredinRouteImport.update({
   path: '/case-studies/credin',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CaseStudiesAerosphereRoute = CaseStudiesAerosphereRouteImport.update({
-  id: '/case-studies/aerosphere',
-  path: '/case-studies/aerosphere',
+const CaseStudiesVitamindAiRoute = CaseStudiesVitamindAiRouteImport.update({
+  id: '/case-studies/vitamind-ai',
+  path: '/case-studies/vitamind-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExpertiseCrmErpRoute = ExpertiseCrmErpRouteImport.update({
+  id: '/expertise/crm-erp',
+  path: '/expertise/crm-erp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExpertiseMobileAppRoute = ExpertiseMobileAppRouteImport.update({
+  id: '/expertise/mobile-app',
+  path: '/expertise/mobile-app',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExpertiseWebDesignRoute = ExpertiseWebDesignRouteImport.update({
+  id: '/expertise/web-design',
+  path: '/expertise/web-design',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -136,13 +136,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/case-study': {
-      id: '/case-study'
-      path: '/case-study'
-      fullPath: '/case-study'
-      preLoaderRoute: typeof CaseStudyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -150,32 +143,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/expertise/web-design': {
-      id: '/expertise/web-design'
-      path: '/expertise/web-design'
-      fullPath: '/expertise/web-design'
-      preLoaderRoute: typeof ExpertiseWebDesignRouteImport
+    '/case-study': {
+      id: '/case-study'
+      path: '/case-study'
+      fullPath: '/case-study'
+      preLoaderRoute: typeof CaseStudyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/expertise/mobile-app': {
-      id: '/expertise/mobile-app'
-      path: '/expertise/mobile-app'
-      fullPath: '/expertise/mobile-app'
-      preLoaderRoute: typeof ExpertiseMobileAppRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/expertise/crm-erp': {
-      id: '/expertise/crm-erp'
-      path: '/expertise/crm-erp'
-      fullPath: '/expertise/crm-erp'
-      preLoaderRoute: typeof ExpertiseCrmErpRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/case-studies/vitamind-ai': {
-      id: '/case-studies/vitamind-ai'
-      path: '/case-studies/vitamind-ai'
-      fullPath: '/case-studies/vitamind-ai'
-      preLoaderRoute: typeof CaseStudiesVitamindAiRouteImport
+    '/case-studies/aerosphere': {
+      id: '/case-studies/aerosphere'
+      path: '/case-studies/aerosphere'
+      fullPath: '/case-studies/aerosphere'
+      preLoaderRoute: typeof CaseStudiesAerosphereRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/case-studies/credin': {
@@ -185,11 +164,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CaseStudiesCredinRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/case-studies/aerosphere': {
-      id: '/case-studies/aerosphere'
-      path: '/case-studies/aerosphere'
-      fullPath: '/case-studies/aerosphere'
-      preLoaderRoute: typeof CaseStudiesAerosphereRouteImport
+    '/case-studies/vitamind-ai': {
+      id: '/case-studies/vitamind-ai'
+      path: '/case-studies/vitamind-ai'
+      fullPath: '/case-studies/vitamind-ai'
+      preLoaderRoute: typeof CaseStudiesVitamindAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/expertise/crm-erp': {
+      id: '/expertise/crm-erp'
+      path: '/expertise/crm-erp'
+      fullPath: '/expertise/crm-erp'
+      preLoaderRoute: typeof ExpertiseCrmErpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/expertise/mobile-app': {
+      id: '/expertise/mobile-app'
+      path: '/expertise/mobile-app'
+      fullPath: '/expertise/mobile-app'
+      preLoaderRoute: typeof ExpertiseMobileAppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/expertise/web-design': {
+      id: '/expertise/web-design'
+      path: '/expertise/web-design'
+      fullPath: '/expertise/web-design'
+      preLoaderRoute: typeof ExpertiseWebDesignRouteImport
       parentRoute: typeof rootRouteImport
     }
   }

@@ -8,6 +8,7 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
 import { ArrowUp } from "lucide-react";
@@ -37,11 +38,11 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    reportLovableError(error as Error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
   return (
@@ -78,18 +79,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Amit Tadvi — Senior Product Designer" },
+      { title: "Amit Tadvi — Product Designer | AI-enabled products for complex industries" },
       {
         name: "description",
         content:
-          "Amit Tadvi is a Senior Product Designer with 9+ years shipping enterprise SaaS, aviation, healthcare, fintech and AI products.",
+          "Product Designer with 9+ years designing enterprise SaaS, mobile and web products across healthcare, aviation and fintech. Open to Product Designer roles.",
       },
       { name: "author", content: "Amit Tadvi" },
-      { property: "og:title", content: "Amit Tadvi — Senior Product Designer" },
+      { property: "og:title", content: "Amit Tadvi — Product Designer | AI-enabled products for complex industries" },
       {
         property: "og:description",
         content:
-          "9+ years designing complex enterprise products. Systems thinking, discovery, and shipped outcomes.",
+          "Product Designer with 9+ years designing enterprise SaaS, mobile and web products across healthcare, aviation and fintech. Open to Product Designer roles.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

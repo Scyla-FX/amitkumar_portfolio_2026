@@ -29,7 +29,12 @@ import {
   ShieldCheck,
   Cpu,
 } from "lucide-react";
-import heroOverlay from "../assets/hero-overlay.png";
+import heroCardImg from "../assets/hero_card.png";
+import contactBg from "../assets/Contact_bg.jpg";
+import productCaseStudiesImg from "../assets/Product Case Studies.png";
+import enterpriseSaasImg from "../assets/Enterprise SaaS Platforms.png";
+import mobileProductDesignImg from "../assets/Mobile Product Design.png";
+import webLandingPagesImg from "../assets/Web and Landing Pages.png";
 
 
 /* ------------------------------------------------------------------ */
@@ -358,7 +363,7 @@ export function Nav() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() || 0;
     setScrolled(latest > 24);
-    
+
     if (latest > 150 && latest > previous) {
       setHidden(true);
     } else {
@@ -466,56 +471,56 @@ export function Nav() {
                 transition={{ duration: 0.4, ease: EASE }}
                 className="w-full max-w-[500px] max-h-[90vh] bg-background shadow-2xl rounded-3xl flex flex-col border border-line overflow-y-auto pointer-events-auto"
               >
-              <div className="flex items-center justify-between p-6 border-b border-line">
-                <span className="font-display text-2xl text-ink">Get in touch</span>
-                <button
-                  aria-label="Close contact"
-                  onClick={() => setContactOpen(false)}
-                  className="grid h-10 w-10 place-items-center rounded-full border border-line hover:bg-surface transition-colors"
-                >
-                  <X className="h-5 w-5 text-ink" />
-                </button>
-              </div>
-              
-              <div className="p-8 flex flex-col gap-10 flex-1">
-                <div>
-                  <h3 className="font-display text-3xl text-ink mb-2">Let's build something great.</h3>
-                  <p className="text-ink-soft/90 font-light leading-relaxed">
-                    I'm always open to discussing product design work, partnerships, or consulting opportunities.
-                  </p>
-                </div>
-                
-                <div className="space-y-6">
-                  <div>
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground block mb-1">Name</span>
-                    <span className="text-lg font-medium text-ink">Tadvi Amitkumar Dhirajbhai</span>
-                  </div>
-                  <div>
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground block mb-1">Email</span>
-                    <a href="mailto:amittadvi1412@gmail.com" onClick={() => setContactOpen(false)} className="text-lg font-medium text-ink hover:text-accent transition-colors underline decoration-line underline-offset-4 hover:decoration-accent">amittadvi1412@gmail.com</a>
-                  </div>
-                  <div>
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground block mb-1">Contact</span>
-                    <a href="tel:+919898086164" onClick={() => setContactOpen(false)} className="text-lg font-medium text-ink hover:text-accent transition-colors">+91 98980 86164</a>
-                  </div>
+                <div className="flex items-center justify-between p-6 border-b border-line">
+                  <span className="font-display text-2xl text-ink">Get in touch</span>
+                  <button
+                    aria-label="Close contact"
+                    onClick={() => setContactOpen(false)}
+                    className="grid h-10 w-10 place-items-center rounded-full border border-line hover:bg-surface transition-colors"
+                  >
+                    <X className="h-5 w-5 text-ink" />
+                  </button>
                 </div>
 
-                <div className="mt-auto pt-10">
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground block mb-4">Connect with me</span>
-                  <div className="flex items-center gap-4">
-                    <a href="https://www.linkedin.com/in/amitinnovatesux/" onClick={() => setContactOpen(false)} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-10 h-10 hover:opacity-80 transition-opacity">
-                      <img src="/linkedin-app-icon.png" alt="LinkedIn" className="w-full h-full object-contain" />
-                    </a>
-                    <a href="https://www.behance.net/amittadvi" onClick={() => setContactOpen(false)} target="_blank" rel="noopener noreferrer" aria-label="Behance" className="w-10 h-10 hover:opacity-80 transition-opacity">
-                      <img src="/behance-square-color-icon.png" alt="Behance" className="w-full h-full object-contain" />
-                    </a>
-                    <a href="https://dribbble.com/Scyla_FX1412" onClick={() => setContactOpen(false)} target="_blank" rel="noopener noreferrer" aria-label="Dribbble" className="w-10 h-10 hover:opacity-80 transition-opacity">
-                      <img src="/dribbble-square-color-icon.png" alt="Dribbble" className="w-full h-full object-contain" />
-                    </a>
+                <div className="p-8 flex flex-col gap-10 flex-1">
+                  <div>
+                    <h3 className="font-display text-3xl text-ink mb-2">Let's build something great.</h3>
+                    <p className="text-ink-soft/90 font-light leading-relaxed">
+                      I'm always open to discussing product design work, partnerships, or consulting opportunities.
+                    </p>
+                  </div>
+
+                  <div className="space-y-6">
+                    <div>
+                      <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground block mb-1">Name</span>
+                      <span className="text-lg font-medium text-ink">Tadvi Amitkumar Dhirajbhai</span>
+                    </div>
+                    <div>
+                      <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground block mb-1">Email</span>
+                      <a href="mailto:amittadvi1412@gmail.com" onClick={() => setContactOpen(false)} className="text-lg font-medium text-ink hover:text-accent transition-colors underline decoration-line underline-offset-4 hover:decoration-accent">amittadvi1412@gmail.com</a>
+                    </div>
+                    <div>
+                      <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground block mb-1">Contact</span>
+                      <a href="tel:+919898086164" onClick={() => setContactOpen(false)} className="text-lg font-medium text-ink hover:text-accent transition-colors">+91 98980 86164</a>
+                    </div>
+                  </div>
+
+                  <div className="mt-auto pt-10">
+                    <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground block mb-4">Connect with me</span>
+                    <div className="flex items-center gap-4">
+                      <a href="https://www.linkedin.com/in/amitinnovatesux/" onClick={() => setContactOpen(false)} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-10 h-10 hover:opacity-80 transition-opacity">
+                        <img src="/linkedin-app-icon.png" alt="LinkedIn" className="w-full h-full object-contain" />
+                      </a>
+                      <a href="https://www.behance.net/amittadvi" onClick={() => setContactOpen(false)} target="_blank" rel="noopener noreferrer" aria-label="Behance" className="w-10 h-10 hover:opacity-80 transition-opacity">
+                        <img src="/behance-square-color-icon.png" alt="Behance" className="w-full h-full object-contain" />
+                      </a>
+                      <a href="https://dribbble.com/Scyla_FX1412" onClick={() => setContactOpen(false)} target="_blank" rel="noopener noreferrer" aria-label="Dribbble" className="w-10 h-10 hover:opacity-80 transition-opacity">
+                        <img src="/dribbble-square-color-icon.png" alt="Dribbble" className="w-full h-full object-contain" />
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
             </div>
           </>
         )}
@@ -577,116 +582,134 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: EASE }}
-          className="relative flex min-h-[50vh] md:min-h-[55vh] flex-col justify-between overflow-hidden rounded-[2rem] shadow-2xl md:rounded-[2.5rem] p-8 sm:p-10 md:p-16 text-white"
+          className="relative flex flex-col justify-between overflow-hidden rounded-[2rem] bg-ink shadow-2xl md:rounded-[2.5rem] p-8 sm:p-12 md:p-16 lg:px-16 lg:py-28 min-h-[630px] md:min-h-[710px] lg:min-h-[770px] text-white"
         >
-          {/* User's Uploaded Image */}
-          <img src={heroOverlay} alt="Hero background" className="absolute inset-0 h-full w-full object-cover" />
+          {/* Base Radial Gradient Atmosphere */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(50% 60% at 20% 30%, oklch(0.35 0.14 42/0.6), transparent), radial-gradient(50% 60% at 80% 70%, oklch(0.3 0.12 30/0.55), transparent)",
+            }}
+          />
 
-          {/* 90% Fluid Gradient Overlay */}
-          <div className="absolute inset-0 animate-fluid-bg bg-gradient-to-br from-[#c94b3a] via-[#3a7596] to-[#403c62] opacity-90" />
+          {/* Hero Card Image with overlay blending effect */}
+          <img
+            src={heroCardImg}
+            alt="Hero background"
+            className="absolute inset-0 h-full w-full object-cover mix-blend-overlay opacity-50 pointer-events-none"
+            style={{ mixBlendMode: "overlay", opacity: 0.5 }}
+          />
 
-          {/* Darken Tint */}
-          <div className="absolute inset-0 bg-black/40" />
+          {/* Subtle text readability scrim on left text area */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent pointer-events-none" />
 
           <div className="pointer-events-none absolute inset-0 grain opacity-20" aria-hidden />
 
-          <div className="relative z-10 w-full flex flex-col min-h-[50vh] md:min-h-[55vh] justify-between">
-            {/* Top Row */}
-            <div className="flex flex-col lg:flex-row justify-between w-full gap-12">
-              {/* Left Top */}
-              <div className="flex-1 max-w-[650px]">
-                <motion.div custom={0} variants={fadeUp} initial="hidden" animate="show" className="flex items-center gap-3 mb-8">
-                  <div className="relative flex h-2.5 w-2.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E8A855] opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#E8A855]"></span>
-                  </div>
-                  <span className="text-xs font-mono uppercase tracking-[0.15em] text-white/70">Senior Product Designer · AI-Enabled Products</span>
-                </motion.div>
-                
-                <motion.h1 
-                  custom={1} variants={fadeUp} initial="hidden" animate="show"
-                  className="text-[44px] sm:text-[56px] md:text-[64px] font-bold leading-[1.4] tracking-tight mb-8"
-                >
-                  I design the systems behind AI-powered products.
-                </motion.h1>
-              </div>
+          <div className="relative z-10 w-full flex flex-col lg:flex-row justify-between gap-12 lg:gap-16 my-auto">
+            {/* Left Column: Eyebrow + Main Heading + Description + CTA */}
+            <div className="flex-1 max-w-[640px] flex flex-col">
+              {/* Eyebrow */}
+              <motion.div custom={0} variants={fadeUp} initial="hidden" animate="show" className="flex items-center gap-3 mb-6 md:mb-8">
+                <div className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E8A855] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#E8A855]"></span>
+                </div>
+                <span className="text-xs font-mono uppercase tracking-[0.15em] text-white/70">Product Designer · AI-Enabled Products</span>
+              </motion.div>
 
-              {/* Right Top Stats */}
-              <motion.div custom={2} variants={fadeUp} initial="hidden" animate="show" className="flex flex-row lg:flex-col gap-6 lg:gap-8 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 lg:items-end">
-                <div className="flex flex-col min-w-[120px] lg:text-right">
-                  <span className="font-mono text-3xl font-medium text-white tabular-nums">9 yrs</span>
-                  <span className="text-xs text-white/60 mt-1 uppercase tracking-widest font-medium">In practice</span>
-                </div>
-                <div className="flex flex-col min-w-[200px] lg:max-w-[220px] lg:text-right">
-                  <span className="font-mono text-3xl font-medium text-white tabular-nums">5</span>
-                  <span className="text-[10px] sm:text-xs text-white/60 mt-1 uppercase tracking-widest font-medium leading-relaxed">Industries - Aviation, Healthcare, HR Tech, Fintech</span>
-                </div>
-                <div className="flex flex-col min-w-[140px] lg:text-right">
-                  <span className="font-mono text-3xl font-medium text-white tabular-nums">0&rarr;1</span>
-                  <span className="text-xs text-white/60 mt-1 uppercase tracking-widest font-medium">Enterprise systems shipped</span>
-                </div>
+              {/* Main Heading */}
+              <motion.h1
+                custom={1} variants={fadeUp} initial="hidden" animate="show"
+                className="text-[36px] sm:text-[46px] md:text-[52px] lg:text-[58px] font-bold leading-[1.25] sm:leading-[1.28] md:leading-[1.3] tracking-tight mb-0"
+              >
+                I design AI{"\u2011"}enabled products for complex, regulated industries.
+              </motion.h1>
+
+              {/* Description */}
+              <motion.p
+                custom={2} variants={fadeUp} initial="hidden" animate="show"
+                className="mt-8 md:mt-10 lg:mt-12 text-[16px] sm:text-[17px] md:text-[18px] text-white/85 leading-[2.1] sm:leading-[2.18] md:leading-[2.25] font-light max-w-[580px]"
+              >
+                9+ years turning ambiguous workflows into scalable products and design systems across healthcare, aviation and enterprise software. I prototype with AI in days, so ideas are tested with real users before they’re built.
+              </motion.p>
+
+              {/* CTA Buttons */}
+              <motion.div
+                custom={3} variants={fadeUp} initial="hidden" animate="show"
+                className="flex flex-wrap items-center gap-4 mt-9 md:mt-12 lg:mt-14"
+              >
+                <Link
+                  to="/case-study"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-white text-[#0a0a0a] font-medium text-sm transition-all duration-300 hover:bg-white/90 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                >
+                  View case studies
+                </Link>
+
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium text-sm backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                >
+                  Download resume
+                </a>
               </motion.div>
             </div>
 
-            {/* Bottom Row */}
-            <motion.div custom={3} variants={fadeUp} initial="hidden" animate="show" className="flex flex-col md:flex-row items-start md:items-end justify-between mt-16 md:mt-20 gap-10">
-              {/* Left Bottom */}
-              <div className="max-w-[540px]">
-                <p className="text-[17px] text-white/80 leading-relaxed font-light">
-                  9+ years turning ambiguous workflows into scalable products and design systems across healthcare, aviation and enterprise software. I prototype with AI in days, so ideas are tested with real users before they’re built.
-                </p>
-
-                <div className="flex flex-wrap items-center gap-4 mt-8">
-                  <Link
-                    to="/case-study"
-                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-white text-[#0a0a0a] font-medium text-sm transition-all duration-300 hover:bg-white/90 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
-                  >
-                    View case studies
-                  </Link>
-
-                  <a
-                    href="/resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium text-sm backdrop-blur-md transition-all duration-300 hover:border-white/40 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
-                  >
-                    Download resume
-                  </a>
+            {/* Right Column: Stats (Top) & Floating Element (Bottom) */}
+            <div className="flex flex-col justify-between items-start lg:items-end gap-10 pt-4 lg:pt-0">
+              {/* Stats */}
+              <motion.div
+                custom={2}
+                variants={fadeUp}
+                initial="hidden"
+                animate="show"
+                className="grid grid-cols-3 gap-4 sm:gap-6 lg:flex lg:flex-col lg:gap-10 lg:items-end w-full lg:w-auto pt-6 lg:pt-0 border-t border-white/15 lg:border-t-0"
+              >
+                <div className="flex flex-col lg:text-right">
+                  <span className="font-mono text-2xl sm:text-3xl font-medium text-white tabular-nums">9+ yrs</span>
+                  <span className="text-[11px] sm:text-xs text-white/60 mt-2 uppercase tracking-wider font-medium leading-[1.85]">In practice</span>
                 </div>
-              </div>
-              
-              {/* Right Bottom */}
-              <div className="flex flex-col items-end gap-6 h-full justify-end">
-                {/* Floating Element - Shifted to bottom */}
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: 0.4, ease: EASE }}
-                  whileHover={{ y: -5 }}
-                  className="hidden lg:block w-[280px] md:w-[320px] bg-white/5 backdrop-blur-md rounded-[24px] p-2 border border-white/10 shadow-2xl overflow-hidden group cursor-pointer"
-                >
-                  <Link to={HERO_PROJECTS[projectIndex].link} className="block relative w-full rounded-[16px] overflow-hidden aspect-[32/9] bg-black/20">
-                    {HERO_PROJECTS.map((proj, idx) => (
-                      <img 
-                        key={idx}
-                        src={proj.img} 
-                        alt="Featured Case Study" 
-                        className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 ${idx === projectIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}`} 
-                      />
-                    ))}
-                    <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#1B2A3D]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                    <div className="absolute z-30 top-3 right-3 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/20 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
-                      <ArrowUpRight className="w-4 h-4 text-white" />
-                    </div>
-                    <div className="absolute z-30 bottom-3 left-3 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-75 pointer-events-none">
-                      <span className="px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/20 text-[11px] uppercase tracking-wider font-medium text-white shadow-sm">
-                        View Project
-                      </span>
-                    </div>
-                  </Link>
-                </motion.div>
-              </div>
-            </motion.div>
+                <div className="flex flex-col lg:text-right lg:max-w-[240px]">
+                  <span className="font-mono text-2xl sm:text-3xl font-medium text-white tabular-nums">4</span>
+                  <span className="text-[11px] sm:text-xs text-white/60 mt-2 uppercase tracking-wider font-medium leading-[1.85]">Industries · Aviation, Healthcare, HR Tech, Fintech</span>
+                </div>
+                <div className="flex flex-col lg:text-right lg:max-w-[260px]">
+                  <span className="font-mono text-2xl sm:text-3xl font-medium text-white tabular-nums">5+</span>
+                  <span className="text-[11px] sm:text-xs text-white/60 mt-2 uppercase tracking-wider font-medium leading-[1.85]">AI-driven projects · Healthcare, Legal, Mental Health, Learning</span>
+                </div>
+              </motion.div>
+
+              {/* Floating Element */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.4, ease: EASE }}
+                whileHover={{ y: -5 }}
+                className="hidden lg:block w-[280px] md:w-[320px] bg-white/5 backdrop-blur-md rounded-[20px] p-2 border border-white/10 shadow-2xl overflow-hidden group cursor-pointer"
+              >
+                <Link to={HERO_PROJECTS[projectIndex].link} className="block relative w-full rounded-[14px] overflow-hidden aspect-[32/9] bg-black/20">
+                  {HERO_PROJECTS.map((proj, idx) => (
+                    <img
+                      key={idx}
+                      src={proj.img}
+                      alt="Featured Case Study"
+                      className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-105 ${idx === projectIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                    />
+                  ))}
+                  <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#1B2A3D]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  <div className="absolute z-30 top-3 right-3 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/20 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
+                    <ArrowUpRight className="w-4 h-4 text-white" />
+                  </div>
+                  <div className="absolute z-30 bottom-3 left-3 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-75 pointer-events-none">
+                    <span className="px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/20 text-[11px] uppercase tracking-wider font-medium text-white shadow-sm">
+                      View Project
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -733,10 +756,10 @@ export function AboutMe() {
                 I use AI throughout my process, from research synthesis to working prototypes, so ideas can be tested with real users in days instead of weeks. I also know where AI falls short, and I design the human-in-the-loop moments that build trust. I&apos;m currently open to Product Designer roles and select zero-to-one engagements, especially in healthcare, aviation and other operationally complex industries.
               </p>
             </div>
-            
+
             {/* Horizontal Quick Hits & CTAs */}
             <div className="mt-12 md:mt-16 pt-10 border-t border-line flex flex-col gap-10">
-              
+
               <div className="flex flex-col md:flex-row gap-10 md:gap-16">
                 <div className="flex-1">
                   <h4 className="font-display text-lg text-ink mb-4">Core Focus</h4>
@@ -782,7 +805,7 @@ export function AboutMe() {
                 </a>
               </div>
             </div>
-            
+
           </div>
         </div>
 
@@ -800,30 +823,30 @@ export function AboutMe() {
 const FEATURED_PROJECTS = [
   {
     n: "01",
-    title: "UX Case Study",
-    tags: ["Research", "Strategy", "Wireframing"],
-    img: "/featured-ux-case-study.jpg",
+    title: "Product Case Studies",
+    tags: ["Research", "Strategy", "Prototypes"],
+    img: productCaseStudiesImg,
     link: "/case-study",
   },
   {
     n: "02",
-    title: "SaaS based CRM / ERP",
-    tags: ["Enterprise", "Dashboard", "UI/UX"],
-    img: "/featured-crm-erp.jpg",
+    title: "Enterprise SaaS Platforms",
+    tags: ["Dashboards", "Workflows", "Data Tables"],
+    img: enterpriseSaasImg,
     link: "/expertise/crm-erp",
   },
   {
     n: "03",
-    title: "Mobile Application",
+    title: "Mobile Product Design",
     tags: ["iOS", "Android", "Interaction"],
-    img: "/featured-mobile-app.jpg",
+    img: mobileProductDesignImg,
     link: "/expertise/mobile-app",
   },
   {
     n: "04",
-    title: "Webdesign",
-    tags: ["Webflow", "Creative", "Animation"],
-    img: "/featured-webdesign.jpg",
+    title: "Web and Landing Pages",
+    tags: ["Webflow", "Responsive", "Motion"],
+    img: webLandingPagesImg,
     link: "/expertise/web-design",
   },
 ];
@@ -868,7 +891,7 @@ function FeaturedCard({ p, i, total }: { p: typeof FEATURED_PROJECTS[0] & { link
       {/* Bottom Bar Content */}
       <div className="absolute bottom-4 left-4 right-4 md:bottom-8 md:left-8 md:right-8 z-20 pointer-events-none">
         <div className="flex flex-col md:flex-row md:items-center justify-between rounded-[1rem] bg-black/60 backdrop-blur-lg border border-white/10 px-6 py-5 transition-colors duration-500">
-          
+
           {/* Left side: Number & Title */}
           <div className="flex items-center gap-4">
             <span className="font-mono text-xs text-white/50">({p.n})</span>
@@ -1125,7 +1148,7 @@ export function Capabilities() {
 /*  Process                                                            */
 /* ------------------------------------------------------------------ */
 
-const PROCESS = [
+const PROCESS: Array<{ n: string; t: string; b: string; d?: string }> = [
   {
     n: "01",
     t: "Discover",
@@ -1216,15 +1239,26 @@ export function Process() {
 /*  Experience Timeline                                                */
 /* ------------------------------------------------------------------ */
 
-const CORE_TIMELINE = [
+interface TimelineEntry {
+  y: string;
+  r: string;
+  scope?: string;
+  c: string;
+  s?: string;
+  b: string[];
+}
+
+const CORE_TIMELINE: TimelineEntry[] = [
   {
-    y: "Jun 2024 — Present",
-    r: "Product Designer / UX Designer",
+    y: "Jun 2024 — Sep 2026",
+    r: "UI/UX Designer",
+    scope: "Product Design Scope",
     c: "AV DEVS Solutions Pvt. Ltd.",
+    s: "Product designer on aviation, healthcare and HR tech platforms, from discovery to developer handoff.",
     b: [
-      "Own end-to-end product design for mobile and web platforms across aviation, healthcare, and HR tech clients.",
-      "Built and maintain a shared design system used across 3+ client products, cutting design-to-dev handoff time significantly.",
-      "Run user research and usability testing closely with PMs and engineers to align designs with business goals."
+      "Own end-to-end design for web and mobile products, from research and flows to final UI and specs.",
+      "Built and maintain a shared design system across 3+ client products, giving developers one source of truth.",
+      "Run research and usability testing with PMs and engineers, using AI tools to synthesize findings and prototype faster.",
     ],
   },
   {
@@ -1233,8 +1267,8 @@ const CORE_TIMELINE = [
     c: "ekZero Enterprise Software Services Pvt Ltd.",
     b: [
       "Led design for core product flows, owning decisions from early concept through final UI in Figma.",
-      "Delivered detailed specs and interactive prototypes that reduced development revision cycles across multiple product releases.",
-      "Mentored junior designers on process and critique, while shaping roadmap priorities with product and engineering leads."
+      "Delivered specs and interactive prototypes that cut development revision cycles by [X%] across multiple releases.",
+      "Mentored junior designers on process and critique while shaping roadmap priorities with product and engineering leads.",
     ],
   },
   {
@@ -1242,9 +1276,9 @@ const CORE_TIMELINE = [
     r: "UI/UX Designer",
     c: "Upkram Technologies Pvt. Ltd.",
     b: [
-      "Designed interfaces for web and mobile products based on ongoing user research and behavioral analysis.",
-      "Built wireframes, prototypes, and high-fidelity UI, iterating continuously based on usability testing feedback from users.",
-      "Contributed reusable components to a shared design system, improving consistency and efficiency across multiple products."
+      "Designed web and mobile interfaces informed by ongoing user research and behavioral analysis.",
+      "Built wireframes, prototypes and high-fidelity UI, iterating on usability testing feedback.",
+      "Contributed reusable components to a shared design system, improving consistency across multiple products.",
     ],
   },
   {
@@ -1252,9 +1286,8 @@ const CORE_TIMELINE = [
     r: "Sr. Designer / UI UX Designer",
     c: "Kanan International Pvt. Ltd.",
     b: [
-      "Redesigned the company website, increasing user engagement and significantly reducing bounce rate across key pages.",
-      "Led a small design team, setting clear direction on visual and interaction design standards company-wide.",
-      "Designed marketing campaign assets aligned to brand identity, using A/B testing to improve interface usability."
+      "Redesigned the company website, [increasing engagement / reducing bounce rate by X%] on key pages.",
+      "Led a small design team, setting visual and interaction standards and using A/B testing to improve usability.",
     ],
   },
   {
@@ -1262,9 +1295,8 @@ const CORE_TIMELINE = [
     r: "UI UX Designer",
     c: "Blackfox Media Pvt. Ltd.",
     b: [
-      "Designed graphics and UI for several advertising campaigns, significantly improving click-through rates for clients.",
-      "Led a small team of designers, maintaining consistency with brand guidelines across all campaign projects.",
-      "Worked directly with clients to translate their vision into multimedia and digital design solutions."
+      "Designed UI and graphics for advertising campaigns, improving client click-through rates by [X%].",
+      "Led a small design team and worked directly with clients to turn briefs into digital design solutions.",
     ],
   },
 ];
@@ -1275,19 +1307,15 @@ const EARLY_TIMELINE = [
     r: "Sr. Roto Artist",
     c: "Trace VFX Solutions India Pvt. Ltd.",
     b: [
-      "Delivered precise rotoscoping and matte cutting techniques for VFX integration on live-action film projects.",
-      "Collaborated closely with the VFX team to meet project timelines and maintain quality standards.",
-      "Supported seamless visual effects integration across several high-profile film and television productions."
+      "Rotoscoping and matte work for live-action film and television VFX.",
     ],
   },
   {
     y: "Mar 2012 — Oct 2015",
-    r: "Autocad Designer",
+    r: "AutoCAD Designer",
     c: "Dhara Fire Service Private Limited",
     b: [
-      "Created detailed and compliant AutoCAD designs for fire safety systems across multiple client projects.",
-      "Collaborated closely with engineers on technical specifications, ensuring accuracy throughout the design process.",
-      "Maintained design templates and documentation to support efficient and timely project delivery."
+      "Compliant AutoCAD designs for fire safety systems, built with engineers.",
     ],
   },
 ];
@@ -1314,9 +1342,8 @@ export function Experience() {
           </div>
         </div>
         <h2 className="font-display text-4xl leading-[1.2] text-ink md:text-5xl">
-          Over eight years of digital design,
-          <br />
-          <span className="text-ink-soft">across five distinct and highly complex industries.</span>
+          9+ years of design, <br className="hidden sm:block" />
+          <span className="text-ink-soft">now focused on AI-enabled products.</span>
         </h2>
       </div>
 
@@ -1344,8 +1371,20 @@ export function Experience() {
                 {t.y}
               </div>
               <div className="md:col-span-10">
-                <h3 className="font-display text-3xl text-ink md:text-4xl leading-none md:leading-none">{t.r}</h3>
+                <h3 className="font-display text-3xl text-ink md:text-4xl leading-tight">
+                  {t.r}
+                  {t.scope && (
+                    <span className="text-ink-soft text-xl md:text-2xl font-light ml-2.5">
+                      · {t.scope}
+                    </span>
+                  )}
+                </h3>
                 <div className="mt-3 text-sm text-accent">{t.c}</div>
+                {t.s && (
+                  <p className="mt-3 text-base font-medium text-ink leading-relaxed">
+                    {t.s}
+                  </p>
+                )}
                 <ul className="mt-4 w-full list-disc list-outside ml-4 space-y-2 text-base leading-relaxed text-ink-soft">
                   {t.b.map((item, idx) => (
                     <li key={idx} className="pl-2">{item}</li>
@@ -1633,54 +1672,88 @@ export function Contact() {
   return (
     <section id="contact" className="relative px-4 md:px-8 lg:px-[120px] py-20 md:py-32">
       <div className="w-full">
-        <div className="relative overflow-hidden rounded-[2rem] bg-ink px-8 py-[100px] text-background md:rounded-[3rem] md:px-16">
+        <div className="relative overflow-hidden rounded-[2rem] bg-ink px-8 py-16 sm:py-20 md:rounded-[3rem] md:px-16 md:py-24 text-background border border-line/20 shadow-2xl">
+          {/* Base Radial Gradient Atmosphere */}
           <div
-            className="absolute inset-0 opacity-70"
+            className="absolute inset-0 pointer-events-none"
             style={{
               background:
                 "radial-gradient(50% 60% at 20% 30%, oklch(0.35 0.14 42/0.6), transparent), radial-gradient(50% 60% at 80% 70%, oklch(0.3 0.12 30/0.55), transparent)",
             }}
           />
-          <div className="relative">
-            <SectionLabel>
-              <span className="text-background/60">Let&apos;s build better products</span>
-            </SectionLabel>
 
+          {/* Contact Background Image with lighter / screen blending effect */}
+          <img
+            src={contactBg}
+            alt="Workspace setup"
+            className="absolute inset-0 h-full w-full object-cover object-center pointer-events-none mix-blend-screen opacity-[0.07]"
+            style={{ mixBlendMode: "screen", opacity: 0.07 }}
+          />
+
+          {/* Subtle readability scrim so text remains crystal clear */}
+          <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/40 to-transparent pointer-events-none" />
+
+          <div className="relative z-10 flex flex-col gap-8 md:gap-10">
+            {/* Section label */}
+            <div className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.28em] text-white/50">
+              <span className="h-px w-8 bg-white/20" />
+              <span>Contact</span>
+            </div>
+
+            {/* Heading */}
             <RevealText
-              text="Have a problem "
+              text="Let’s build better products."
               as="h2"
-              className="font-display text-5xl leading-[1.6] text-background md:text-[6vw]"
-            />
-            <RevealText
-              text={"nobody's cracked yet?\u00A0"}
-              as="h2"
-              className="font-display text-[52px] font-semibold leading-[1.6] italic text-accent md:text-[6.5vw]"
-              delay={0.15}
+              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold leading-[1.1] tracking-tight text-white max-w-4xl"
             />
 
-            <div className="mt-20 grid gap-10 md:grid-cols-12 items-end">
-              <p className="md:col-span-6 text-lg leading-loose text-background/80">
-                I take on two engagements a quarter — usually zero-to-one AI products, enterprise
-                consolidation, or design leadership for teams shipping regulated software.
-              </p>
+            {/* Description */}
+            <p className="text-base sm:text-lg md:text-xl font-light leading-relaxed text-white/80 max-w-2xl">
+              I’m open to Product Designer roles and select zero-to-one projects. If you’re building something complex, I’d like to hear about it.
+            </p>
 
-              <div className="md:col-span-6 md:col-start-7 flex flex-col items-start md:items-end gap-6">
-                <div className="flex flex-col items-center gap-6">
-                  <MagneticButton href="mailto:amittadvi1412@gmail.com">
-                    amittadvi1412@gmail.com
-                  </MagneticButton>
-                  <div className="flex w-full justify-between text-sm text-background/70 px-2">
-                    <a href="https://www.linkedin.com/in/amitinnovatesux/" target="_blank" rel="noreferrer" className="story-link hover:text-white transition-colors">
-                      LinkedIn
-                    </a>
-                    <a href="https://www.behance.net/amittadvi" target="_blank" rel="noreferrer" className="story-link hover:text-white transition-colors">
-                      Behance
-                    </a>
-                    <a href="https://dribbble.com/Scyla_FX1412" target="_blank" rel="noreferrer" className="story-link hover:text-white transition-colors">
-                      Dribbble
-                    </a>
-                  </div>
-                </div>
+            {/* Availability line & Buttons */}
+            <div className="pt-2 flex flex-col gap-6">
+              {/* Availability line */}
+              <div className="flex items-center gap-2.5 font-mono text-xs uppercase tracking-wider text-white/70">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                </span>
+                <span>Open to Product Designer roles · Available to start soon</span>
+              </div>
+
+              {/* Buttons */}
+              <div className="flex flex-wrap items-center gap-4">
+                <a
+                  href="mailto:amittadvi1412@gmail.com"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white text-ink font-medium text-sm transition-all duration-300 hover:bg-accent hover:text-white hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  <span>Email me</span>
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/amitinnovatesux/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 font-medium text-sm shadow-sm backdrop-blur-md transition-all duration-300 hover:border-white/50 hover:scale-[1.02] active:scale-[0.98]"
+                >
+                  <span>Connect on LinkedIn</span>
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+              </div>
+
+              {/* Other links */}
+              <div className="flex items-center gap-4 text-xs font-mono uppercase tracking-wider text-white/60 pt-2">
+                <span>Also find me on</span>
+                <a href="https://www.behance.net/amittadvi" target="_blank" rel="noreferrer" className="text-white/90 hover:text-accent transition-colors underline underline-offset-4">
+                  Behance
+                </a>
+                <span>·</span>
+                <a href="https://dribbble.com/Scyla_FX1412" target="_blank" rel="noreferrer" className="text-white/90 hover:text-accent transition-colors underline underline-offset-4">
+                  Dribbble
+                </a>
               </div>
             </div>
           </div>
@@ -1705,7 +1778,7 @@ export function Footer() {
           <div>
             <div className="text-sm font-medium text-ink">Amit Tadvi</div>
             <div className="text-xs text-muted-foreground">
-              Senior Product Designer · © {new Date().getFullYear()}
+              Product Designer · © {new Date().getFullYear()}
             </div>
           </div>
         </div>
@@ -1774,7 +1847,7 @@ export function Expertise() {
           <div className="flex items-center gap-2 shrink-0">
             <span className="h-1.5 w-1.5 bg-[#FF451A]" />
             <span className="font-mono text-[10px] md:text-xs font-semibold uppercase tracking-[0.2em] text-ink-soft">
-              Service
+              EXPERTISE
             </span>
           </div>
         </div>
@@ -1782,7 +1855,7 @@ export function Expertise() {
         {/* Tagline */}
         <div className="w-full mb-8 md:mb-12">
           <h2 className="font-display text-4xl leading-[1.2] text-ink md:text-5xl max-w-3xl">
-            A product design partner for systems that scale.
+            Skills I bring to product teams.
           </h2>
           <p className="mt-4 text-base md:text-lg text-ink-soft font-light max-w-2xl">
             Four areas where I help teams move from ambiguity to shipped, usable products.
