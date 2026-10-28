@@ -1257,7 +1257,7 @@ const CORE_TIMELINE: TimelineEntry[] = [
     s: "Product designer on aviation, healthcare and HR tech platforms, from discovery to developer handoff.",
     b: [
       "Own end-to-end design for web and mobile products, from research and flows to final UI and specs.",
-      "Built and maintain a shared design system across 3+ client products, giving developers one source of truth.",
+      "Built a tailored design system (tokens, components, documentation) for each client product, keeping design and development in sync.",
       "Run research and usability testing with PMs and engineers, using AI tools to synthesize findings and prototype faster.",
     ],
   },
@@ -1267,7 +1267,7 @@ const CORE_TIMELINE: TimelineEntry[] = [
     c: "ekZero Enterprise Software Services Pvt Ltd.",
     b: [
       "Led design for core product flows, owning decisions from early concept through final UI in Figma.",
-      "Delivered specs and interactive prototypes that cut development revision cycles by [X%] across multiple releases.",
+      "Delivered detailed specs and interactive prototypes that clarified edge cases and reduced back-and-forth revision cycles across releases.",
       "Mentored junior designers on process and critique while shaping roadmap priorities with product and engineering leads.",
     ],
   },
@@ -1278,24 +1278,25 @@ const CORE_TIMELINE: TimelineEntry[] = [
     b: [
       "Designed web and mobile interfaces informed by ongoing user research and behavioral analysis.",
       "Built wireframes, prototypes and high-fidelity UI, iterating on usability testing feedback.",
-      "Contributed reusable components to a shared design system, improving consistency across multiple products.",
+      "Built reusable design system components that kept the visual language consistent across the product.",
     ],
   },
   {
     y: "Jan 2020 — May 2021",
-    r: "Sr. Designer / UI UX Designer",
+    r: "Sr. Designer",
     c: "Kanan International Pvt. Ltd.",
     b: [
-      "Redesigned the company website, [increasing engagement / reducing bounce rate by X%] on key pages.",
-      "Led a small design team, setting visual and interaction standards and using A/B testing to improve usability.",
+      "Redesigned the company website end-to-end, restructuring navigation and content hierarchy to improve engagement across key landing pages.",
+      "Set visual and interaction design direction for a small design team, establishing shared standards for the team.",
+      "Applied structured A/B testing to guide interface decisions on campaign assets.",
     ],
   },
   {
     y: "May 2016 — Sep 2019",
-    r: "UI UX Designer",
+    r: "UI/UX Designer",
     c: "Blackfox Media Pvt. Ltd.",
     b: [
-      "Designed UI and graphics for advertising campaigns, improving client click-through rates by [X%].",
+      "Designed UI and digital campaign assets across multiple advertising accounts, translating client vision directly into multimedia and digital design solutions.",
       "Led a small design team and worked directly with clients to turn briefs into digital design solutions.",
     ],
   },
@@ -1304,7 +1305,7 @@ const CORE_TIMELINE: TimelineEntry[] = [
 const EARLY_TIMELINE = [
   {
     y: "Nov 2015 — Apr 2016",
-    r: "Sr. Roto Artist",
+    r: "Roto Artist",
     c: "Trace VFX Solutions India Pvt. Ltd.",
     b: [
       "Rotoscoping and matte work for live-action film and television VFX.",
@@ -1546,7 +1547,7 @@ export function Testimonials() {
         <h2 className="font-display text-4xl leading-[1.2] text-ink md:text-5xl">
           What colleagues and clients say
           <br />
-          <span className="text-ink-soft">after we work together.</span>
+          <span className="text-ink-soft">after working together.</span>
         </h2>
       </div>
 
